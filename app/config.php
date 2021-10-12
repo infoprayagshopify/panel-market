@@ -2,8 +2,8 @@
 
 define('PATH', realpath('.'));
 define('SUBFOLDER', false);
-define('URL', 'https://yourdomain.com');
-define('STYLESHEETS_URL', '//yourdomain.com');
+define('URL', 'https://sarthak-marketing.herokuapp.com');
+define('STYLESHEETS_URL', '//sarthak-marketing.herokuapp.com');
 
 error_reporting(1);
 date_default_timezone_set('Asia/Kolkata');
