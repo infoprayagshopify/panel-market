@@ -1,0 +1,51 @@
+::selection {
+  background-color:#5580ff;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#5580ff;
+  color: #fff;
+}
+
+
+a {
+  color:#5580ff;
+}
+
+.home-banner:after {
+	      background:linear-gradient(rgb(45,45,76),rgb(33,33,61));
+  }
+  .footer-section .footer-text {
+    width: auto;
+    max-width: 100%;
+}
+
+.tab-style-1 .nav > li > a:hover,
+.m-btn-theme:hover,
+.m-btn-t-theme,
+.blog-item .blog-content h4 a:hover,
+.theme-color {
+  color:#5580ff;
+}
+.theme-colors {
+  color:#454545;
+}
+
+
+.header-nav.fixed-header .navbar-nav .nav-link.nav-link-btn,
+.form-group .input-focus-effect,
+.tab-style-1 .nav > li > a:after,
+.m-btn-t-theme:hover,
+.theme-after-bg:after,
+.m-btn-theme,
+.theme-bg {
+  background:#5580ff;
+}
+
+
+.m-btn-theme,
+.m-btn-t-theme,
+.border-theme,
+.btn-theme {
+  border-color:#5580ff;
+}

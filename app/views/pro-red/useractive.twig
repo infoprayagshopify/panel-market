@@ -1,0 +1,53 @@
+{% include 'header.view.twig' %}
+
+<!-- Main variables *content* -->
+<div class="main-panel">
+			<div class="content">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-8 col-md-offset-2">
+							<div class="alert alert-success" style="margin-bottom:10px;">
+								<b>Enter the activation code sent to your mobile phone. (Accounts that are not confirmed within 24 hours will be deleted.)</b>
+							</div>
+							{% if error == 1 %}
+							  <div class="alert alert-dismissible alert-danger" style="margin-bottom:5px;">
+								{{ errorText }}
+							  </div>
+							{% endif %}
+							{% if success %}
+							<div class="alert alert-dismissible alert-success" style="margin-bottom:5px;">
+								{{ successText }}
+							 </div>
+						   {% endif %}
+							<div class="card" style="margin-bottom: 10px;">
+								<div class="well">
+									<form method="post">
+									  <div class="form-group">
+										<label class="control-label">{{ lang["user_active.code"] }}</label>
+										<input type="text" class="form-control" name="active_code">
+									  </div>
+
+									  <button type="submit" class="btn btn-primary">{{ lang["user_active.button"] }}</button>
+									</form>
+								</div>
+							</div>
+							<div class="alert alert-info" style="margin-top:5px;">
+								<b>An activation system is made for system spam security.</b>
+							</div>
+						</div>
+					</div>
+{% if contentText %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="well ">
+          {{ contentText }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+		</div>
+	</div>
+</div>
+{% include 'footer.view.twig' %}

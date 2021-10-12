@@ -1,0 +1,110 @@
+{% include 'header.twig' %}
+<br>
+    <div class="wrapper-content__body">
+      
+    <div class="new_order-block ">
+   <div class="container-fluid">
+            <div class="row new-order-form">
+                <div class="col-lg-12">
+                   <div class="component_form_group component_card component_radio_button">
+                      <div class="card ">
+ 
+
+    {% if error %}
+      <div class="alert alert-dismissible alert-danger">
+        {{ errorText }}
+      </div>
+    {% endif %}
+
+    {% if data["order"]["success"] == 1 %}
+      <div class="alert alert-dismissible alert-success">
+          <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+          <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+          <strong> {{ lang["neworder.success.link"] }}: </strong> {{ data['order']['link'] }} <br>
+          <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['quantity'] }} <br>
+          <strong> {{ lang["neworder.success.charge"] }}: </strong> {{ data['order']['price'] }} <br>
+          <strong> {{ lang["neworder.success.balance"] }}: </strong>{{ data['order']['balance'] }} <br>
+      </div>
+    {% endif %}
+    {% if data["order"]["success"] == 2 %}
+      <div class="alert alert-dismissible alert-success">
+         <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+         <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+         <strong> {{ lang["neworder.success.username"] }}: </strong> {{ data['order']['link'] }} <br>
+         <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['min'] }} - {{ data['order']['max'] }} <br>
+         <strong> {{ lang["neworder.success.posts"] }}: </strong> {{ data['order']['posts'] }} <br>
+         <strong> {{ lang["neworder.success.delay"] }}: </strong>{{ data['order']['delay'] }} <br>
+       </div>
+    {% endif %}
+
+      <div class="well">
+
+        <form method="post" action="">
+<div class="component_button_forms">
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">{{ lang["neworder.category"] }}</label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" {% if category["category_id"] == data['categories'] %} selected {% endif %} >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">{{ lang["neworder.service"] }}</label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+
+            <div class="form-group" id="charge_div">
+              <label for="charge" class="control-label">{{ lang["neworder.charge"] }}</label>
+              <input type="text" class="form-control" id="charge" readonly>
+            </div>
+
+
+          
+          <button type="submit" class="btn btn-big-primary">{{ lang["neworder.button"] }}</button>
+
+        </form>
+      </div>
+    </div>
+  </div>    </div>
+        </div>
+</div></div>
+        </div>
+
+<br>
+
+
+<br>
+<br>
+      <div id="block_48">
+    <div class="text-block-with-card ">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="component_card">
+                        <div class="card">
+                            <div class="text-block__description">
+                                <h2 class="text-center">Read Before Placing Order</h2>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">1. MAXIMUM COMPLETION TIME FOR ANY ORDER IS 24 HOURS. WAIT TILL 24 HOURS AFTER PLACING &nbsp;&nbsp;</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">2. PLEASE DO NOT USE MORE THAN ONE SERVER AT THE SAME TIME FOR THE SAME PAGE. WE CANNOT GIVE YOU THE CORRECT FOLLOWERS/LIKES NUMBER IN THAT CASE. WE WILL NOT REFUND FOR THESE ORDERS.</span></span></span></span></h3>
+<h3><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">3. &nbsp;WE CAN'T GIVE CORRECT NUMBER OF QUANTITY IF THERE IS ANY INCREASE IN START COUNT FROM ANY OTHER SOURCE THERE IS NO REFUND IN THIS CASE <br>
+4. DO NOT PLACE MULTIPLE ORDER FOR SAME LINK WAIT FOR THE FIRST ORDER TO COMPLETE</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">5. There IS NO GURANTEE FOR BOTS And No Refill Services</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">6. IF YOU ORDERED REFILL/GURANTEED FOLLOWERS AND IF THEY DROP MAKE A&nbsp;</span></span></span></span><a target="_self" href="https://skmpanel.com/tickets"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">TICKET</span></span></span></span></a><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">&nbsp;AS SOON AS POSSIBLE WE WILL REFILL IN TIME/ OR IF REFILL BUTTON AVAILABLE PRESS IT YOUR ORDER WILL BE REFILLED</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">7. ALWAYS READ DESCRIPTION OF SERVICES</span></span></span></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'footer.twig' %}

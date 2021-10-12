@@ -1,0 +1,94 @@
+{% include 'header.twig' %}
+<script type="text/javascript">
+$(function () {
+    $('#neworder_category').selectpicker();
+});
+</script>	
+<br>
+   <div class="wrapper-content">
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_12">
+	<div class="new_order-block ">
+		<div class="bg"></div>
+		<div class="divider-top"></div>
+		<div class="divider-bottom"></div>
+		<div class="container">
+			<div class="row new-order-form">
+				<div class="col-lg-8">
+					<div class="component_form_group component_card component_radio_button">
+						<div class="card ">
+    {% if error %}
+      <div class="alert alert-dismissible alert-danger">
+        {{ errorText }}
+      </div>
+    {% endif %}
+
+    {% if data["order"]["success"] == 1 %}
+      <div class="alert alert-dismissible alert-success">
+          <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+          <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+          <strong> {{ lang["neworder.success.link"] }}: </strong> {{ data['order']['link'] }} <br>
+          <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['quantity'] }} <br>
+          <strong> {{ lang["neworder.success.charge"] }}: </strong> {{ data['order']['price'] }} <br>
+          <strong> {{ lang["neworder.success.balance"] }}: </strong>{{ data['order']['balance'] }} <br>
+      </div>
+    {% endif %}
+    {% if data["order"]["success"] == 2 %}
+      <div class="alert alert-dismissible alert-success">
+         <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+         <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+         <strong> {{ lang["neworder.success.username"] }}: </strong> {{ data['order']['link'] }} <br>
+         <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['min'] }} - {{ data['order']['max'] }} <br>
+         <strong> {{ lang["neworder.success.posts"] }}: </strong> {{ data['order']['posts'] }} <br>
+         <strong> {{ lang["neworder.success.delay"] }}: </strong>{{ data['order']['delay'] }} <br>
+       </div>
+    {% endif %}
+
+      <div class="well">
+
+        <form method="post" action="">
+<div class="component_button_forms">
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">{{ lang["neworder.category"] }}</label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" {% if category["category_id"] == data['categories'] %} selected {% endif %} >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">{{ lang["neworder.service"] }}</label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+
+            <div class="form-group" id="charge_div">
+              <label for="charge" class="control-label">{{ lang["neworder.charge"] }}</label>
+              <input type="text" class="form-control" id="charge" readonly>
+              <input type="hidden" id="charge_default" readonly>
+            </div>
+
+
+          
+          <button type="submit" class="btn btn-block btn-primary">{{ lang["neworder.button"] }}</button>
+
+        </form>
+      </div>
+    </div>
+  </div>    </div>
+        </div>
+</div></div>
+        </div>
+
+<br>
+
+
+<br>
+<br>
+{% include 'footer.twig' %}

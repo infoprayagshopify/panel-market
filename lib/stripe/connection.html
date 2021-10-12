@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Pay with Stripe</title>
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/global.css" />
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="./script.js" defer></script>
+        <script src="https://unpkg.com/i18next/i18next.js"></script>
+        <script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+        <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+        <script src="./translation.js" defer></script>
+        <script src="https://sse.codesandbox.io/client-hook-3.js"></script>
+    </head>
+
+    <body>
+        <div class="sr-root">
+            <div class="sr-main">
+                <section class="container">
+                    <div>
+                        <div class="pasha-image">
+                            <img src="https://picsum.photos/280/320?random=4" width="140" height="160" />
+                        </div>
+                    </div>
+                    <div class="quantity-setter">
+                        <button style="display: none;" id="subtract" disabled></button>
+                        <input type="number" id="quantity-input" max="1" value="1" hidden />
+                        <button style="display: none;" id="add" disabled></button>
+                    </div>
+                    <p class="sr-legal-text">Add Funds to SMM</p>
+                    <button id="submit" data-i18n="button.submit" i18n-options="{ "total": "0" }"></button>
+                </section>
+                <div id="error-message"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+var MIN_PHOTOS = 1;
+var MAX_PHOTOS = 1;
+
+var basicPhotoButton = document.getElementById('basic-photo-button');
+document
+    .getElementById('quantity-input')
+    .addEventListener('change', function(evt) {
+        // Ensure customers only buy between 1 and 10 photos
+        if (evt.target.value < MIN_PHOTOS) {
+            evt.target.value = MIN_PHOTOS;
+        }
+        if (evt.target.value > MAX_PHOTOS) {
+            evt.target.value = MAX_PHOTOS;
+        }
+    });
+
+var updateQuantity = function(evt) {
+    if (evt && evt.type === 'keypress' && evt.keyCode !== 13) {
+        return;
+    }
+
+    var isAdding = evt && evt.target.id === 'add';
+    var inputEl = document.getElementById('quantity-input');
+    var currentQuantity = parseInt(inputEl.value);
+
+    document.getElementById('add').disabled = false;
+    document.getElementById('subtract').disabled = false;
+
+    // Calculate new quantity
+    var quantity = evt ?
+        isAdding ?
+        currentQuantity + 1 :
+        currentQuantity - 1 :
+        currentQuantity;
+    // Update number input with new value.
+    inputEl.value = quantity;
+    // Calculate the total amount and format it with currency symbol.
+    var amount = config.basePrice;
+    var numberFormat = new Intl.NumberFormat(i18next.language, {
+        style: 'currency',
+        currency: config.currency,
+        currencyDisplay: 'symbol',
+    });
+    var parts = numberFormat.formatToParts(amount);
+    var zeroDecimalCurrency = true;
+    for (var part of parts) {
+        if (part.type === 'decimal') {
+            zeroDecimalCurrency = false;
+        }
+    }
+    amount = zeroDecimalCurrency ? amount : amount / 100;
+    var total = (quantity * amount).toFixed(2);
+    var formattedTotal = numberFormat.format(total);
+
+    document
+        .getElementById('submit')
+        .setAttribute('i18n-options', `{ "total": "${formattedTotal}" }`);
+    updateContent('button.submit');
+};
+
+/* Handle any errors returns from Checkout  */
+var handleResult = function(result) {
+    if (result.error) {
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+    }
+};
+
+// Create a Checkout Session with the selected quantity
+var createCheckoutSession = function() {
+    var inputEl = document.getElementById('quantity-input');
+    var quantity = parseInt(inputEl.value);
+
+    return fetch('create-checkout-session', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            quantity: quantity,
+            locale: i18next.language.toLowerCase().split('-')[0],
+        }),
+    }).then(function(result) {
+        return result.json();
+    });
+};
+
+/* Get your Stripe publishable key to initialize Stripe.js */
+fetch('config')
+    .then(function(result) {
+        return result.json();
+    })
+    .then(function(json) {
+        window.config = json;
+        var stripe = Stripe(config.publicKey);
+        updateQuantity();
+        // Setup event handler to create a Checkout Session on submit
+        document.querySelector('#submit').addEventListener('click', function(evt) {
+            createCheckoutSession().then(function(data) {
+                stripe
+                    .redirectToCheckout({
+                        sessionId: data.sessionId,
+                    })
+                    .then(handleResult);
+            });
+        });
+    });
+
+
+i18next
+  .use(i18nextXHRBackend)
+  .use(i18nextBrowserLanguageDetector)
+  .init(
+    {
+      fallbackLng: "en",
+      debug: false,
+      load: "languageOnly",
+      backend: {
+        // load from locales folder.
+        loadPath: "locales/{{lng}}.json",
+        crossDomain: false,
+      },
+    },
+    function (err, t) {
+      // init set content
+      updateContent();
+    }
+  );
+
+function updateContent(key) {
+  if (key) {
+    var elm = document.querySelectorAll(`[data-i18n='${key}']`)[0];
+    var options = elm.getAttribute("i18n-options");
+    options = JSON.parse(options);
+
+    elm.innerHTML = i18next.t(key, options);
+  } else {
+    document.querySelectorAll("[data-i18n]").forEach(function (elm) {
+      var key = elm.getAttribute("data-i18n");
+      var options = elm.getAttribute("i18n-options");
+      options = JSON.parse(options);
+
+      elm.innerHTML = i18next.t(key, options);
+    });
+  }
+}
+
+function changeLng(lng) {
+  i18next.changeLanguage(lng);
+}
+
+i18next.on("languageChanged", () => {
+  updateContent();
+});
+</script>

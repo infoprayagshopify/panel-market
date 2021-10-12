@@ -1,0 +1,439 @@
+{% include 'header.twig' %}
+
+                       <div class="main-banner signup-page item-bg1">
+   <div class="container-fluid"><!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+      <div class="smallAnimBox one">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div><!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+      <div class="smallAnimBox two">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div><!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+      <div class="smallAnimBox three">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox four">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox five">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox six">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox seven">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox eight">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox nine">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox ten">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="starContainer">
+         <div class="stars star-1"></div>
+         <div class="stars star-2"></div>
+         <div class="stars star-3"></div>
+         <div class="stars star-4"></div>
+         <div class="stars star-5"></div>
+         <div class="stars star-6"></div>
+         <div class="stars star-7"></div>
+      </div>
+   </div>
+   <div class="sigma_subheader-shape waves">
+      <div class="wave"></div>
+      <div class="wave"></div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="main-banner-content">
+               <h1>Register Below</h1>
+               <p></p>
+            </div>
+            <!-- form -->
+            <div class="row formRow">
+               <div class="col-lg-12 col-md-12 col-sm-12">
+                   {% if errorText %}
+                            <div class="alert alert-dismissible alert-danger">
+                              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                              {{ errorText }}
+                            </div>
+                          {% endif %}
+                          {% if successText %}
+                            <div class="alert alert-dismissible alert-success">
+                              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                              {{ successText }}
+                            </div>
+                          {% endif %}
+                  <div class="SignForm">
+                     <form  action="" method="post">
+                          
+                                                               <div class="row fieldsRow">
+                        <div class="col-sm-12">
+                           <div class="form-group">
+                              <input type="text" class="form-control inputField" id="username" name="username" value="{{ data['username'] }}" placeholder="Username">
+                              <span><i class="fas fa-user-tie"></i></span>
+                           </div>
+                        </div>
+                                                <div class="col-sm-6">
+                           <div class="form-group">  
+                                <input type="text" class="form-control  inputField" id="firstname" name="name" value="{{ data['name'] }}" placeholder="Full name">
+                              <span><i class="fas fa-key"></i></span>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <input type="text" class="form-control inputField"  id="skype" name="telephone" value="{{ data['telephone'] }}" placeholder="WhatsApp No.">
+                              <span><i class="fas fa-key"></i></span>
+                           </div>
+                        </div>
+                                                <div class="col-sm-6">
+                           <div class="form-group">  
+                              <input type="email" class="form-control inputField" id="email" name="email" value="{{ data['email'] }}" placeholder="Email">
+                              <span><i class="fas fa-key"></i></span>
+                           </div>
+                        </div>
+                                                <div class="col-sm-6">
+                           <div class="form-group">  
+                              <input type="password" class="form-control inputField" id="password" name="password" placeholder="Password">
+                              <span><i class="fas fa-key"></i></span>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">  
+                              <input type="password" class="form-control inputField" id="confirm" name="password_again" placeholder="Confirm password">
+                              <span><i class="fas fa-key"></i></span>
+                           </div>
+                        </div>               
+                        <input type="hidden" name="_csrf" value="yMAEpQ3GqQJxO5VonEXITpZlMvdEAc_CnBqqLl9CVaqRqjfUXqf_Sz9L9gLwP7oH4AFUrSYy_oqvasJeJ29g5g==">
+                        <div class="col-sm-12">
+                           <button type="submit" class="Signbtn">
+                           Sign up
+                           </button>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-sm-12">
+                           <br>                       
+							{% if captcha %}
+                                <div class="form-group">
+                                  <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+                                </div>
+                              {% endif %}
+                     </div>
+                     <div class="row optionsRow">                  
+                  <div class="col-sm-12 col-xs-12">
+                           <label>
+                           <input type="checkbox" class="terms-accept-checkbox" name="terms" value="1"> I have read and agreed with <a href="/terms" target="_blank">Terms of Service</a>
+                           </label>
+                        </div>
+                     </div>                               
+                                          <div class="row optionsRow">
+                        <div class="col-sm-12 col-xs-12">Already have an account? <a href="/">Sign in</a>                           </div>
+                     </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <!-- form -->
+         </div>
+      </div>
+   </div>
+   <div class="animation-wrapper">
+      <div class="stagger-visualizer">
+         <div class="cursor"></div>
+         <div class="dots-wrapper"></div>
+      </div>
+   </div>
+</div>
+
+    <script>
+        jQuery("#ot-industries-slider").owlCarousel({
+            stagePadding: 365,
+            items:2,
+            nav:false,
+            dots: true,
+            loop:true,
+            navText: ['<i class="flaticon-back"></i>', '<i class="flaticon-right-arrow-1"></i>'],
+            responsive:{
+                1600:{
+                    stagePadding: 365,
+                    items:2
+                },
+                1200:{
+                    stagePadding: 200,
+                    items:2
+                },
+                992:{
+                    stagePadding: false,
+                    items:2
+                },
+                0:{
+                    stagePadding: false,
+                    items:1
+                }
+            }
+        });
+        function myFunction1() {
+            var dots = document.getElementById("dots1");
+            var moreText = document.getElementById("more1");
+            var btnText = document.getElementById("myBtn1");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction2() {
+            var dots = document.getElementById("dots2");
+            var moreText = document.getElementById("more2");
+            var btnText = document.getElementById("myBtn2");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction3() {
+            var dots = document.getElementById("dots3");
+            var moreText = document.getElementById("more3");
+            var btnText = document.getElementById("myBtn3");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction4() {
+            var dots = document.getElementById("dots4");
+            var moreText = document.getElementById("more4");
+            var btnText = document.getElementById("myBtn4");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction5() {
+            var dots = document.getElementById("dots5");
+            var moreText = document.getElementById("more5");
+            var btnText = document.getElementById("myBtn5");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction6() {
+            var dots = document.getElementById("dots6");
+            var moreText = document.getElementById("more6");
+            var btnText = document.getElementById("myBtn6");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }        
+
+        // odometers
+        function custom_count(){
+            var flag = true;
+            $('.counters-sec').each(function() {
+                if ($(this).isInViewport()) {   // Here we check perticular section is in the viewport or number-counter-section
+                    if (flag) {
+                        /* FOR number counter(odometer)  */
+                        var arr = [],
+                        i = 0;
+                        $('.odometer').each(function() {
+                            arr[i++] = $(this).attr('data-count');;
+
+                            odometer3.innerText = arr[0]; //here odometer3 is id of second number      
+                            odometer.innerText = arr[1]; //here odometer is id of first number
+                            odometer1.innerText = arr[2]; //here odometer1 is id of second number
+                            odometer2.innerText = arr[3]; //here odometer2 is id of second number
+                        });
+                        flag = false;
+                    }
+                } else {}
+            });
+        }
+
+        // for check the section in view port or not;
+        $.fn.isInViewport = function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+            console.log(elementBottom > viewportTop && elementTop < viewportBottom);
+        };
+
+        $(document).ready(function() {
+
+            //  odometer section is on view-port or not
+            //custom_count();
+            //resize-function
+            $(window).resize(function() {
+                custom_count();
+            });
+            
+            $(window).on("scroll",function(){
+            custom_count();
+            });
+      
+            //typing
+            new TypeIt("#typewriter", {
+              speed: 200,
+              waitUntilVisible: true,
+              loop: true
+            })
+            .type("Followers", {delay: 100})
+            .pause(2000)
+            .delete(9)
+            .type('Likes')
+            .pause(2000)
+            .delete(5)
+            .type('Views')
+            .pause(2000)
+            .delete(5)
+            .go();
+        });
+      
+        //video modal
+        $(document).ready(function() {  
+          var $videoSrc;  
+          $('.video-btn').click(function() {
+            $videoSrc = $(this).attr("src");
+          });
+          console.log($videoSrc);  
+          $('#videoModal').on('shown.bs.modal', function (e) {    
+            $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+          })
+          $('#videoModal').on('hide.bs.modal', function (e) {
+            $("#video").attr('src',$videoSrc); 
+          })
+        });
+    </script>
+            <script>
+        // Tabs
+        (function ($) {
+            $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+            $('.tab ul.tabs li a').on('click', function (g) {
+                var tab = $(this).closest('.tab'), 
+                index = $(this).closest('li').index();
+                tab.find('ul.tabs > li').removeClass('current');
+                $(this).closest('li').addClass('current');
+                tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+                tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+                g.preventDefault();
+            });
+        })(jQuery);
+    </script><!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+    <script>
+        $(document).ready(function(){
+            $(window).trigger('resize');
+        });
+    </script>
+
+{% include 'footer.twig' %}

@@ -1,0 +1,138 @@
+{% include 'header.twig' %}
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_22">
+    <div class="orders-history ">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="orders-history__margin-tab">
+                        <div class="component_status_tabs">
+                            <div class="">
+      <ul class="nav nav-pills tab ">
+	  
+        <li class="nav-item" >
+		<a {% if 'all' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders">{{ lang['orders.status.all'] }}</a>
+		</li>
+        <li class="nav-item"><a {% if 'pending' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/pending">{{ lang['orders.status.pending'] }}</a></li>
+        <li class="nav-item"><a {% if 'inprogress' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/inprogress">{{ lang['orders.status.inprogress'] }}</a></li>
+        <li class="nav-item"><a {% if 'completed' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/completed">{{ lang['orders.status.completed'] }}</a></li>
+        <li class="nav-item"><a {% if 'partial' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/partial">{{ lang['orders.status.partial'] }}</a></li>
+        <li class="nav-item"><a {% if 'processing' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/processing">{{ lang['orders.status.processing'] }}</a></li>
+        <li class="nav-item"><a {% if 'canceled' == status %}  class="nav-link active" {% endif %} class="nav-link" href="orders/canceled">{{ lang['orders.status.canceled'] }}</a></li>
+       
+      </ul><br>
+	       <div class="row">
+                <div class="col-12">
+                    <div class="orders-history__margin-search component_card">
+                        <div class="card">
+                            <div class="component_form_group component_button_search">
+                                <div class="">
+                                    <form action="" method="get" id="history-search">
+                                        <div class="input-group">
+                                            <input type="text" name="search" class="form-control" value="{{ search }}" placeholder="Search orders">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-big-secondary" type="submit">
+                                                    <span class="fas fa-search"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     <div class="row">
+                <div class="col">
+                    <div class="orders-history__margin-table">
+                        <div class="table-bg component_table ">
+                            <div class="table-wr table-responsive">
+        <table class="table ">
+          <thead>
+            <tr>
+              <th>{{ lang['orders.id'] }}</th>
+              <th>{{ lang['orders.date'] }}</th>
+              <th class="width-40">{{ lang['orders.link'] }}</th>
+              <th>{{ lang['orders.charge'] }}</th>
+              <th class="nowrap">{{ lang['orders.start.count'] }}</th>
+              <th>{{ lang['orders.quantity'] }}</th>
+              <th>{{ lang['orders.service'] }}</th>
+              <th>{{ lang['orders.status'] }}</th>
+              <th>{{ lang['orders.remains'] }}</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for order in orders %}
+              <tr>
+                <td>{{ order['id'] }}</td>
+                <td>{{ order['date'] }}</td>
+                <td class="width-40">{{ order['link'] }}</td>
+                <td>{{ order['charge'] }}</td>
+                <td class="nowrap">{{ order['start_count'] }}</td>
+                <td>{{ order['quantity'] }}</td>
+                <td>{{ order['service'] }}</td>
+                <td>{{ order['status'] }}</td>
+                <td>{{ order['remains'] }}</td>
+              </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+
+      {% if pagination["count"] > 1 %}
+        <ul class="pagination">
+
+          {% if pagination["current"] != 1 %}
+            <li>
+              <a href="orders/{{ status }}/{{ pagination["previous"] }}{% if search %}?search={{ search }}{% endif %}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          {% endif %}
+
+          {% set r, l = 3, 3 %}
+
+          {% if pagination['current'] == 1 %}
+            {% set r = 7 %}
+          {% endif %}
+
+          {% if pagination['current'] == 2 %}
+            {% set r = 5 %}
+          {% endif %}
+
+          {% if pagination['current'] >= pagination['count'] %}
+            {% set l = 5 %}
+          {% endif %}
+
+          {% for page in 1..pagination["count"] %}
+            {% if page >= (pagination['current']-l) and page <= (pagination['current']+r) %}
+              <li{% if page == pagination['current'] %} class="active" {%endif%}><a href="orders/{{ status }}/{{ page }}{% if search %}?search={{ search }}{% endif %}">{{ page }}</a></li>
+            {%endif%}
+          {% endfor %}
+
+          {% if pagination['current'] < pagination['count'] %}
+            <li>
+              <a href="orders/{{ status }}/{{ pagination['next'] }}{% if search %}?search={{ search }}{% endif %}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          {% endif %}
+
+        </ul>
+      {% endif %}
+
+    </div>
+  </div>
+</div></div></div></div>
+</div></div></div></div></div></div>
+</div></div>
+{% include 'footer.twig' %}

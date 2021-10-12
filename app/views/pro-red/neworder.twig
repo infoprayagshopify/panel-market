@@ -1,0 +1,159 @@
+{% include 'header.twig' %}
+<br>
+<div id="block_252">
+            <div class="faq ">
+                <div class="bg"></div>
+                <div class="divider-top"></div>
+                <div class="divider-bottom"></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="row">
+                                                            <div class="col-lg-12">
+                                        <div class="faq-block__card">
+                                            <div class="card" style="
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ">
+                                                <div class="faq-block__header collapsed" data-toggle="collapse" data-target="#faq-block-252-4" aria-expanded="false" aria-controls="#faq-block-252-4">
+                                                    <div class="faq-block__header-title">
+                                                        <h4>Rules to Use (Must Read)</h4>
+                                                    </div>
+                                                    <div class="faq-block__header-icon">
+                                                        <div class="style-text-dark faq-block__icon" style></div>
+                                                    </div>
+                                                </div>
+                                                <div class="faq-block__body collapse" id="faq-block-252-4">
+                                                    <div class="faq-block__body-description" style="padding-top: 8px"><br>
+                                                        <ol>
+      <li>For IG likes Followers quantity should be in multiple of 50 or 100 otherwise order will goes in processing and cancel.</li>
+      <li>Refill work after 10% drop</li>
+      <li>And refill only that order whose count showing between start count and end count</li>
+      <li>After placing order do not demand for cancel ,wrong link we not sure 100% cancel or refund</li>
+      <li>place 1 order at 1 time ,if you placed another order on same link before completing the old one then we will deliver 1 order only according to start count  but charges will be cut for both orders</li>
+      <li>Our followers do not drop again after the first refill so dont worry if your followers dropped after 10/20%  just refill them and they will not drop again.</li>
+      <li>Do not make ticket before 24 hours after placing order</li>
+      <li>Do not made multiple ticket for same orders</li>
+      <li>Do not abuse in ticket otherwise account can be suspended</li>
+      <li>Indian followers delivery speed is too slow order it on your risk</li>
+      <li>after loading the fund , fund cannot be withdraw you have to use it on panel only</li>
+      <li>discount is only for them who spent daily min 500 rs on our panel</li>
+    </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br>
+
+    <div class="wrapper-content__body">
+      
+    <div class="new_order-block ">
+   <div class="container-fluid">
+            <div class="row new-order-form">
+                <div class="col-lg-12">
+                   <div class="component_form_group component_card component_radio_button">
+                      <div class="card ">
+
+    {% if error %}
+      <div class="alert alert-dismissible alert-danger">
+        {{ errorText }}
+      </div>
+    {% endif %}
+
+    {% if data["order"]["success"] == 1 %}
+      <div class="alert alert-dismissible alert-success">
+          <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+          <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+          <strong> {{ lang["neworder.success.link"] }}: </strong> {{ data['order']['link'] }} <br>
+          <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['quantity'] }} <br>
+          <strong> {{ lang["neworder.success.charge"] }}: </strong> {{ data['order']['price'] }} <br>
+          <strong> {{ lang["neworder.success.balance"] }}: </strong>{{ data['order']['balance'] }} <br>
+      </div>
+    {% endif %}
+    {% if data["order"]["success"] == 2 %}
+      <div class="alert alert-dismissible alert-success">
+         <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+         <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+         <strong> {{ lang["neworder.success.username"] }}: </strong> {{ data['order']['link'] }} <br>
+         <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['min'] }} - {{ data['order']['max'] }} <br>
+         <strong> {{ lang["neworder.success.posts"] }}: </strong> {{ data['order']['posts'] }} <br>
+         <strong> {{ lang["neworder.success.delay"] }}: </strong>{{ data['order']['delay'] }} <br>
+       </div>
+    {% endif %}
+
+      <div class="well">
+
+        <form method="post" action="">
+<div class="component_button_forms">
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">{{ lang["neworder.category"] }}</label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" {% if category["category_id"] == data['categories'] %} selected {% endif %} >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">{{ lang["neworder.service"] }}</label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+
+            <div class="form-group" id="charge_div">
+              <label for="charge" class="control-label">{{ lang["neworder.charge"] }}</label>
+              <input type="text" class="form-control" id="charge" readonly>
+            </div>
+
+
+          
+          <button type="submit" class="btn btn-big-primary">{{ lang["neworder.button"] }}</button>
+
+        </form>
+      </div>
+    </div>
+  </div>    </div>
+        </div>
+</div></div>
+        </div>
+
+<br>
+
+
+<br>
+<br>
+      <div id="block_48">
+    <div class="text-block-with-card ">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="component_card">
+                        <div class="card">
+                            <div class="text-block__description">
+                                <h2 class="text-center">Read Before Placing Order</h2>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">1. MAXIMUM COMPLETION TIME FOR ANY ORDER IS 24 HOURS. WAIT TILL 24 HOURS AFTER PLACING   </span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">2. PLEASE DO NOT USE MORE THAN ONE SERVER AT THE SAME TIME FOR THE SAME PAGE. WE CANNOT GIVE YOU THE CORRECT FOLLOWERS/LIKES NUMBER IN THAT CASE. WE WILL NOT REFUND FOR THESE ORDERS.</span></span></span></span></h3>
+<h3><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">3.  WE CAN'T GIVE CORRECT NUMBER OF QUANTITY IF THERE IS ANY INCREASE IN START COUNT FROM ANY OTHER SOURCE THERE IS NO REFUND IN THIS CASE <br>
+4. DO NOT PLACE MULTIPLE ORDER FOR SAME LINK WAIT FOR THE FIRST ORDER TO COMPLETE</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">5. There IS NO GURANTEE FOR BOTS And No Refill Services</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">6. IF YOU ORDERED REFILL/GURANTEED FOLLOWERS AND IF THEY DROP MAKE A </span></span></span></span><a target="_self" href="https://skmpanel.com/tickets"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">TICKET</span></span></span></span></a><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT"> AS SOON AS POSSIBLE WE WILL REFILL IN TIME/ OR IF REFILL BUTTON AVAILABLE PRESS IT YOUR ORDER WILL BE REFILLED</span></span></span></span></h3>
+<h3 class="text-left"><span style="font-size: 18px"><span style="text-transform: uppercase"><span style="color: #000000"><span style="text-align: LEFT">7. ALWAYS READ DESCRIPTION OF SERVICES</span></span></span></span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      <br>
+      <br>
+{% include 'footer.twig' %}

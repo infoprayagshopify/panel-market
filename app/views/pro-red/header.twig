@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="{{ site['url'] }}/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="keywords" content="{{ site['keywords'] }}">
+  <meta name="description" content="{{ site['description'] }}">
+  {% if site['favicon'] %}
+    <link rel="shortcut icon" type="image/ico" href="{{ site['favicon'] }}" />
+  {% endif %}
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  
+      <link rel="stylesheet" type="text/css" href="/public/pro-red/css/panel/1607327652/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="/public/pro-red/css/panel/1607327652/style.css">
+   
+    {{ headerCode }}
+
+  </head>
+ 
+    <style>
+    
+	body{
+  background:red;
+}
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial;
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/* Demo Purpose Only*/
+.demo {
+  font-family: 'Raleway', sans-serif;
+	color:#fff;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo a{
+  font-family: 'Raleway', sans-serif;
+color: #000;		
+}
+	
+	
+	
+	</style>
+	
+{#	<div class="snowflakes" aria-hidden="true">#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#  <div class="snowflake">#}
+{#  ❅#}
+{#  </div>#}
+{#</div>#}
+{% if user['auth'] %}
+
+<body class="body ">
+<div class="wrapper  wrapper-sidebar-navbar ">
+   <div id="block_14" class="component_private_navbar">
+    <span class="component_private_navbar ">
+      <div class="component-navbar-private__wrapper">
+         <div class="sidebar-block__top component-navbar component-navbar__navbar-private sommerce-editor__component-wrapper">
+            <div>
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <div class="sidebar-block__top-brand">
+                                                <div class="component-navbar-brand component-navbar-public-brand">
+                              <a target="_self" href="/"><span style="text-transform: uppercase"><span style="font-size: 24px"><span style="letter-spacing: 1.0px"><span style="line-height: 48px"><strong style="font-weight: bold @media only screen and (max-width: 600px) { display: none; }">{{ site["site_name"] }}</strong></span></span></span></span></a>
+                          </div>
+                                                              </div>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-14" aria-controls="navbar-collapse-14" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-burger">
+                        <span class="navbar-burger-line"></span>
+                    </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbar-collapse-14">
+                     <div class="component-navbar-collapse-divider"></div>
+                     <div class="d-flex component-navbar-collapse">
+                        <ul class="navbar-nav navbar-nav-sidebar-menu">
+                                                       <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}" >
+                                                                               {{ lang['neworder.title'] }}
+                                                                        </a>
+                               </li>
+                                                          <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/services">{{ lang['services.title'] }}</a>
+                               </li>
+                 <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/orders">{{ lang['orders.title'] }}</a>
+                               </li>
+                 <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/dripfeeds"> {{ lang['dripfeed.title'] }}</a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/subscriptions"> {{ lang['subscriptions.title'] }}</a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/addfunds">{{ lang['addfunds.title'] }}</a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/api">{{ lang['api.title'] }}</a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/tickets">{{ lang['tickets.title'] }} {% if ticketCount %} <span class="badge">{{ ticketCount }}</span> {% endif %} </a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/child-panels">Child Panels</a>
+                               </li><li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                                  <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private " href="{{ site['url'] }}/terms">Terms</a>
+                               </li>
+                                                    </ul>
+                        <ul class="navbar-nav">
+                           <li class="nav-item d-flex align-items-center component-navbar-nav-item component-navbar-private-nav-item component-navbar-balance-wrap__navbar-private">
+                               <a class="component-navbar-balance-item__navbar-private"> {% if settings['site_currency'] == "TRY" %} 
+                    {{ "₺" }}
+                {% elseif settings['site_currency'] == "USD" %}
+                    {{ "$" }}
+          {% elseif settings['site_currency'] == "INR" %}
+                    {{ "₹" }}
+                {% else %}
+                    {{ "€" }}
+                {% endif %}
+                              {{ user['balance'] }}</a>
+                           </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                               <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private" href="/account">Account</a>
+                           </li>
+                             <li class="nav-item component-navbar-nav-item component-navbar-private-nav-item">
+                               <a class="component-navbar-nav-link  component-navbar-nav-link__navbar-private" href="/logout">Logout</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </span>
+
+
+    <span class="component_private_sidebar ">
+      <div class="component-sidebar_wrapper">
+         <div class="sidebar-block__left component-sidebar component-sidebar-with-navbar sommerce-editor__component-wrapper component_private_navbar">
+            <div class="component-sidebar__menu-logo">
+                                                    <div class="component-navbar-brand component-sidebar__menu-brand">
+                        <a target="_self" href="/"><span style="text-transform: uppercase"><span style="font-size: 24px"><span style="letter-spacing: 1.0px"><span style="line-height: 35px"><strong style="font-weight: bold">{{ site["site_name"] }}</strong></span></span></span></span></a>
+                    </div>
+					
+                            </div>
+            <ul class="component-sidebar__menu sidebar-block__left-menu">
+                                   <li {% if active_menu == "neworder" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="/" >
+                                                    {{ lang['neworder.title'] }}
+                                                  </a>
+                   </li>
+                                    <li {% if active_menu == "services" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/services" >
+                                                      {{ lang['services.title'] }}
+                                                  </a>
+                   </li>
+                                    <li {% if active_menu == "orders" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/orders" >
+                                                    {{ lang['orders.title'] }}
+                                                  </a>
+                   </li>
+                                    <li {% if active_menu == "dripfeeds" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/dripfeeds" >
+                                                      {{ lang['dripfeed.title'] }}
+                                                  </a>
+                   </li>
+                                    <li {% if active_menu == "subscriptions" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/subscriptions" >
+                                                      {{ lang['subscriptions.title'] }}
+                                                  </a>
+                   </li>
+                                   <li {% if active_menu == "addfunds" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/addfunds" >
+                                                     {{ lang['addfunds.title'] }}
+                                                  </a>
+                   </li>
+                                    <li {% if active_menu == "api" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/api" >
+                                                      {{ lang['api.title'] }}
+                                                                                                            </a>
+                   </li>
+                                                       <li {% if active_menu == "child-panels" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/child-panels" >
+                                                      Child Panels
+                                                                                                            </a>
+                   </li>
+                                   <li {% if active_menu == "tickets" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/tickets" >
+                                                      {{ lang['tickets.title'] }} {% if ticketCount %} <span class="badge">{{ ticketCount }}</span> {% endif %}
+                                                  </a>
+                   </li>
+
+				    <li {% if active_menu == "terms" %} class="component-sidebar__menu-item component-sidebar__menu-item-active" {% endif %}>
+                                                       <a class="component-sidebar__menu-item-link" href="{{ site['url'] }}/terms" >Terms</a>
+                   </li>
+                            </ul>
+							
+         </div>
+      </div>
+   </span>
+</div>
+
+   <div class="wrapper-content">
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+{% else %}
+
+
+
+
+
+
+
+
+
+<body class="body ">
+<div class="wrapper  wrapper-navbar ">
+   <div id="block_1">
+    <div class="block-wrapper">
+        <div class="component_navbar ">
+          <div class="component-navbar__wrapper">
+             <div class="sidebar-block__top component-navbar component-navbar__navbar-public sommerce-editor__component-wrapper">
+                <div>
+                   <nav class="navbar navbar-expand-lg navbar-light">
+                      <div class="sidebar-block__top-brand">
+                                                        <div class="component-navbar-brand component-navbar-public-brand">
+                                  <p><span style="text-transform: uppercase"><span style="letter-spacing: 1.7px"><span style="font-size: 24px"><strong style="font-weight: bold">{{ site["site_name"] }}
+        
+      </a></strong></span></span></span></p>
+                              </div>
+                                                                          </div>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-burger">
+                            <span class="navbar-burger-line"></span>
+                        </span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                         <div class="component-navbar-collapse-divider"></div>
+                         <div class="d-flex component-navbar-collapse">
+                            <ul class="navbar-nav">
+                                                                  <li class="nav-item component-navbar-nav-item">
+                                       <a class="component-navbar-nav-link component-navbar-nav-link__navbar-public " href="/" > Sign in</a>
+                                   </li>
+                                                                  <li class="nav-item component-navbar-nav-item">
+                                       <a class="component-navbar-nav-link component-navbar-nav-link__navbar-public " href="/services" > Services</a>
+                                   </li>
+                                                                  <li class="nav-item component-navbar-nav-item">
+                                       <a class="component-navbar-nav-link component-navbar-nav-link__navbar-public " href="/api" > API</a>
+                                   </li>
+                                                                  <li class="nav-item component-navbar-nav-item">
+                                       <a class="component-navbar-nav-link component-navbar-nav-link__navbar-public " href="/signup" > Sign up</a>
+                                   </li>
+                                                           </ul>
+                         </div>
+                      </div>
+                   </nav>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+    <div class="component_navbar"></div>
+    <div class="component_navbar_sub"></div>
+</div>
+   <div class="wrapper-content">
+    <div class="wrapper-content__header">
+          </div>
+  
+
+
+{% endif %}

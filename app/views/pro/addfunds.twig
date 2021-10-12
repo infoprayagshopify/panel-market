@@ -1,0 +1,351 @@
+{% include 'header.twig' %}
+
+
+<div id="block_252">
+        <div class="faq ">
+            <div class="bg"></div>
+            <div class="divider-top"></div>
+            <div class="divider-bottom"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="row">
+                                                      
+                                           
+            </div>
+        </div>
+    </div>
+
+
+<div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20 " class="container-fluid col-lg-8" style=" margin:0 auto;">
+    <div class="add-funds__form">
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+                <div class="col-lg-12">
+                    <div class="component_card">
+                        <div class="card">
+    <div class="col-md-12">
+
+        {% if error %}
+          <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ errorText }}
+          </div>
+        {% endif %}
+        {% if success %}
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ successText }}
+          </div>
+        {% endif %}
+      </div>
+                          
+                    
+    
+
+ 
+    <div class="col-md-12>
+
+        {% if paymentsList %}
+          <div class="well">
+       
+        
+  			<br>
+              <form method="post" action="addfunds">
+
+                <div class="form-group">
+                  <label for="method" class="control-label">{{ lang['addfunds.method'] }}</label>
+                  <select class="form-control" id="payment_method" name="payment_type">
+                   {% for payment in paymentsList %}
+                      <option value="{{ payment['id'] }}" {% if data['payment_type'] == payment['id'] %} selected {% endif %} >{{ payment['method_name'] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                  <div class="form-group">
+                      <label for="method" class="control-label">{{ lang['addfunds.amount'] }}</label>
+                      <input class="form-control" name="payment_amount" value="{{ data['payment_amount'] }}">
+                  </div>
+
+                <button type="submit" class="btn btn-block btn-big-primary">{{ lang['addfunds.button'] }}</button>
+              </form>
+    
+          </div>
+                                                                           
+                                                                         
+        {% endif %}
+      </div>
+                                                                                 
+                                                                           
+                                                                           
+                             
+             <br>                                                                 
+      
+      <div class="card col-md-12">
+          {% if PaytmQR == 2 %}
+        <div class="">
+           <div class="">
+            <div class="card-body">
+             <h1><center>
+                PAYTM QR
+    			 </h1></center>
+                                
+              <div class="panel-body">
+                <form method="post" action="addfunds">
+                                                     <div class="justify-content-center" style="max-width:300px;  margin:0 auto;"><center><img width="70%" src="{{ PaytmQRimage }}"></center></div>
+                                                                                                                                                                      <br>             
+                                                                                                                                                                                   <center>  <p>  Please add more than ₹5 or it will not be added or refunded. </p></center> <br> 
+                                                                 <br>         <center>  <p>  You can also scan & pay from Phonepe </p></center> <br>                                                                                                     
+                                                                                                                                                                                   
+                    <br>
+                    <div class="form-group col-md-12">
+                        <label for="method" class="control-label">Amount in INR</label>
+                        <input class="form-control" name="payment_amount" value="{{ data['payment_amount'] }}" placeholder="10">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="method" class="control-label">Order ID</label>
+                        <p>Enter Transaction/Order ID without spaces.</p>
+                        <input class="form-control" name="paytmqr_orderid" value="{{ data['paytmqr_orderid'] }}" placeholder="202110122210100058">
+                    </div>
+                    <input type="hidden" class="form-control" name="payment_type" value="14">
+                    <div class="col-md-12">
+                      <button type="submit"  class="btn btn-block btn-big-primary">Submit</button>
+                    </div>
+                </form>
+                                                                                  
+              </div>
+            </div>  
+          </div>
+                                                                                
+        </div>
+      {% endif %}
+     </div>                                                                     
+                                                                           
+                                                                          
+                                                                           
+<br>
+      {% if bankPayment == 2 %}
+     <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20">
+    <div class="add-funds__form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+                <div class="col-lg-12">
+                    <div class="component_card">
+                        <div class="card">
+    <div class="col-md-12">
+
+          {% if paymentsList %}
+         
+    					 <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20">
+    <div class="add-funds__form">
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+                <div class="col-lg-12">
+                    <div class="component_card">
+                        <div class="card">
+    					
+    					  <div class="well">
+       <div class="row">
+            <p style="text-align: center;">
+                <span style="font-weight: 700; font-size: 36px;"> {{ lang['addfunds.bank.title'] }} </span>
+              </p>
+              <br>
+                <form method="post" action="addfunds">
+
+                  <div class="form-group col-md-12">
+                    <label for="method" class="control-label">{{ lang['addfunds.bank'] }}</label>
+                    <select class="form-control" name="payment_bank">
+                     {% for bank in bankList %}
+                        <option value="{{ bank['id'] }}" {% if data['payment_bank'] == payment['id'] %} selected {% endif %} >{{ bank['bank_name'] }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="method" class="control-label">{{ lang['addfunds.bank.amount'] }}</label>
+                        <input class="form-control" name="payment_bank_amount" value="{{ data['payment_bank_amount'] }}">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="method" class="control-label">{{ lang['addfunds.bank.sender'] }}</label>
+                        <input class="form-control" name="payment_gonderen" value="{{ data['payment_gonderen'] }}">
+                    </div>
+                    <div class="col-md-12">
+                      <button type="submit" class="btn btn-block btn-big-primary">{{ lang['addfunds.bank.button'] }}</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+                                                                                 
+                                             
+                                                                                 
+                                                                                 
+
+ <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20">
+    <div class="add-funds__form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+                
+</div>
+</div>
+  </div>
+</div>
+
+  {% if bankPayment == 2 %}
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20">
+    <div class="add-funds__form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+                <div class="col-lg-12">
+                    <div class="component_card">
+                        <div class="card">
+         
+    <div class="col-md-12">
+
+
+            <div class="well">
+
+              <p style="text-align: center;">
+                <span style="font-weight: 700; font-size: 36px;">Bank</span><span style="font-size: 36px;"> Account</span>
+              </p>
+
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-checkable ">
+                  <thead>
+                    <tr>
+                      <th> Bank Name </th>
+                      <th> Branch Code </th>
+                      <th> Account No </th>
+                      <Th> IBAN </th>
+                      <th> Recipient Name </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for bank in bankList %}
+                    <tr>
+                      <td>{{ bank['bank_name'] }}</td>
+                      <td>{{ bank['bank_sube'] }}</td>
+                      <td>{{ bank['bank_hesap'] }}</td>
+                      <td><b>{{ bank['bank_iban'] }}</b><br></td>
+                      <td>{{ bank["bank_alici"] }}</td>
+                    </tr>
+                  {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-checkable ">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <b>INFORMATION: </b> Money Transfer / EFT fees deducted while making payment will not be <b> covered by us </b>.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
+<br>
+ <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_20">
+    <div class="add-funds__form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row add-funds__form-alignment">
+               
+                  <div class="col-md-12">
+                                               
+                                              
+      <div class="card" style="padding:0;">
+        <div class="card-body">
+          
+          <div class="tab-content">
+              <div class="table-responsive">
+            <table class="table table-striped ">
+              <thead>
+            <tr>
+              <th>#</th>
+              <th>Amount</th>
+              <th class="width-40">Method</th>
+              <th>Date</th>
+              <th class="nowrap">Transaction ID</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for transaction in transactions %}
+              <tr>
+                <td>{{ transaction['payment_id'] }}</td>
+                <td>{{ transaction['payment_amount'] }}</td>
+                <td class="width-40">{{ transaction['method_name'] }}</td>
+                <td>{{ transaction['payment_create_date'] }}</td>
+                <td class="nowrap">{{ transaction['payment_extra'] }}</td>
+                
+              </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+            
+            
+         </div>
+  </div></div></div>
+  </div></div></div></div></div></div></div>
+</div>
+
+{% include 'footer.twig' %}

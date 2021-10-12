@@ -1,0 +1,97 @@
+{% include 'header.twig' %}
+
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_16">
+    <div class="ticket-form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row ticket-form__alignment">
+                <div class="col-lg-12">
+                   <div class="component_card">
+                      <div class="card">
+    <div class="col-md-12">
+		<div class="well ">
+    <form name="contact-form" action="/get_response.php" method="post" id="contact-form">
+    <div class="form-group">
+    <label for="Domain">Domain</label>
+    <input type="text" class="form-control" name="domain" placeholder="Domain" required>
+    </div>
+		 <div class="alert alert-info " id="orderNote">
+            <p class="help-block" style="margin-bottom: 5px">Please visit your registrar's dashboard to change nameservers to:</p><ul style="color: #737373; padding-left: 20px"><li>ns1.hostwithbest.in</li><li>ns2.hostwithbest.in</li></ul>        </div>
+    
+		
+		<div class="form-group">
+        
+<label class="Domain" for="currency">Currency</label>
+			
+		<select class="form-control" name="currency" required>
+<option value="INR">Indian Rupee (INR)</option>
+<option value="USD">United States Dollars (USD)</option>
+<option value="RUB">Russian Rubles (RUB)</option>
+<option value="THB">Thai Baht (THB)</option>
+<option value="TRY">Turkish Lira (TRY)</option>
+<option value="EUR">Euro (EUR)</option>
+<option value="IDR">Indonesian Rupiah (IDR)</option>
+<option value="BRL">Brazilian Real (BRL)</option>
+<option value="CNY">Chinese Yuan (CNY)</option>
+<option value="KRW">South Korean Won (KRW)</option>
+<option value="IRR">Iranian Rial (IRR)</option>
+<option value="SAR">Saudi Arabia Riyal (SAR)</option>
+<option value="PLN">Polish złoty (PLN)</option>
+<option value="MYR">Malaysian Ringgit (MYR)</option>
+<option value="GBP">Pound sterling (GBP)</option>
+<option value="KWD">Kuwaiti dinar (KWD)</option>
+<option value="SEK">Swedish krona (SEK)</option>
+<option value="ILS">Israeli shekel (ILS)</option>
+<option value="HKD">Hong Kong dollar (HKD)</option>
+<option value="NGN">Nigerian naira (NGN)</option>
+<option value="KES">Kenyan shilling (KES)</option>
+<option value="JPY">Japanese Yen (JPY)</option>
+<option value="ARS">Argentine peso (ARS)</option>
+<option value="VND">Vietnamese đồng (VND)</option>
+<option value="CAD">Canadian dollar (CAD)</option>
+<option value="IQD">Iraqi dinar (IQD)</option>
+<option value="TWD">New Taiwan Dollars (TWD)</option>
+<option value="AZN">Azerbaijani manat (AZN)</option>
+<option value="BYN">Belarusian ruble (BYN)</option>
+<option value="KZT">Kazakhstani tenge (KZT)</option>
+<option value="UAH">Ukrainian hryvnia (UAH)</option>
+<option value="RON">Romanian leu (RON)</option>
+<option value="AED">United Arab Emirates dirham (AED)</option>
+<option value="COP">Colombian peso (COP)</option>
+</select>
+    </div>
+	
+    <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" name="your_email" placeholder="Username" required>
+    </div>
+		
+		  <div class="form-group">
+        
+<label class="control-label" for="orderpanelform-password">Password</label><input type="password" class="form-control" name="password" placeholder="Password" required>
+    </div>
+		
+		
+    <div class="form-group">
+    <label for="Phone">Phone</label>
+    <input type="text" class="form-control" name="your_phone" placeholder="Phone" required>
+    </div>
+    <div class="form-group">
+              <label for="charge" class="control-label">{{ lang["neworder.charge"] }}</label>
+              <input type="text" class="form-control" value="₹740.00" readonly>
+            </div>
+    <button type="submit" class="btn btn-block btn-big-primary" name="submit" value="Submit" id="submit_form">Submit Order</button>
+    
+    </form>
+    <div class="response_msg"></div>
+    </div></div></div></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   </div>
+    <br><br></div></div></div></div>
+{% include 'footer.twig' %}

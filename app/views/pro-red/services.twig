@@ -1,0 +1,104 @@
+{% include 'header.twig' %}
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_31">
+    <div class="services-list ">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="services-list__table">
+                        <div class="table-bg component_table ">
+                            <div class="table-wr table-responsive">
+        {% if site['service_speed'] == 2 %}
+          <div class="top justify-content-center text-center">
+            <span class="list">
+              <span class="">
+              <span style="color: #f24236;font-weight: 500; font-size:10px;" class="fa fa-arrow-down"></span>
+              <span style="color: #f24236;font-weight: 500; font-size:10px;">: {{ lang['services.speed.veryslow'] }}</span></span>
+              <span class="ml-4x">
+              <span style="color: #fe6d86;font-weight: 500; font-size:10px;" class="fa fa-arrow-down"></span>
+              <span style="color: #fe6d86;font-weight: 500; font-size:10px;">: {{ lang['services.speed.slow'] }}</span></span>
+              <span class="ml-4x">
+              <span style="color: #5696c9;font-weight: 500; font-size:10px;" class="fa fa-compress"></span>
+              <span style="color: #5696c9;font-weight: 500; font-size:10px;">: {{ lang['services.speed.normal'] }}</span></span>
+              <span class="ml-4x">
+              <span style="color: #0dd887;font-weight: 500; font-size:10px;" class="fa fa-arrow-up"></span>
+              <span style="color: #0dd887;font-weight: 500; font-size:10px;">: {{ lang['services.speed.fast'] }}</span></span>
+            </span>
+          </div>
+        {% endif %}
+       <table class="table">
+                                    <thead>
+                                    <tr>
+            <th>{{ lang['services.id'] }}</th>
+            <th class="width-service-name">{{ lang['services.name'] }}</th>
+            <th class="nowrap">{{ lang['services.price'] }}</th>
+            <th class="nowrap">{{ lang['services.min'] }}</th>
+            <th class="nowrap">{{ lang['services.max'] }}</th>
+          </tr>
+          </thead>
+          <tbody>
+              {% for category in serviceCategory %}
+                <tr class="services-list-category-title">
+                                                <td colspan="6">
+                                                   <div class="w-100 ">
+                                                    <center>   <div class="style-bg-primary-alpha-20 style-text-primary services-category">
+                                                          Category: {{ category["category_name"] }}
+                                                       </div></center>
+                                                   </div>
+                                                </td>
+                                            </tr>
+                {% for service in category['services'] %}
+                  <tr>
+                    <td>{{ service["service_id"] }}</td>
+                    <td>{{ service["service_name"] }}</td>
+                    <td>
+                      {{ service["service_price"] }}
+                    </td>
+                    <td>{{ service["service_min"] }}</td>
+                    <td>{{ service["service_max"] }}</td>
+                       <!-- Modal -->
+                        <div class="modal fade" id="service{{ service["service_id"] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> {{ service["service_name"] }} </h5> 
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-left">
+                                <p class="detail-data details-split-959">
+              {{ service["service_description"] }}
+              </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div><a href="javascript:void(0)" class="btn btn-actions " data-toggle="modal" data-target="#service{{ service["service_id"] }}">
+                         <span class="component-navbar-nav-link-icon">
+                                             <span class="fal fa-file-alt"></span>
+                                           </span>
+                  </tr>
+                {% endfor %}
+              {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div></div></div>
+      </div>
+    </div>
+</div>
+
+{% include 'footer.twig' %}

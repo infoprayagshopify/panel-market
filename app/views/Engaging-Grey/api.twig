@@ -1,0 +1,193 @@
+{% include 'header.twig' %}
+ <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_api" class="pt-5">
+  <div class="block-api">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card">
+		  
+            <div class="center-big-content-block">
+               <h2 class="m-b-md">API</h2>
+               <table class="table mb-3">
+                    <tbody>
+                     <tr>
+                        <td class="width-40">HTTP Method</td>
+                        <td>POST</td>
+                     </tr>
+                     <tr>
+                        <td>API URL</td>
+                        <td>{{ site["url"] }}/api/v2</td>
+                     </tr>
+                     {% if user['auth'] %}
+                     <tr>
+                        <td>API Key</td>
+                        <td>{{ user["apikey"] }}</td>
+                     </tr>
+                     {% endif %}
+                     <tr>
+                        <td>Return format</td>
+                        <td>JSON</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <h4 class="m-t-md"><strong> Service List </strong></h4>
+               <div class="table-bg">
+                    <div class="table-wr ">
+                      <table class="table mb-3">
+                        <thead>
+                     <tr>
+                        <th class="width-40">parameters</th>
+                        <th>Explanation</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>key</td>
+                        <td>Your API Key</td>
+                     </tr>
+                     <tr>
+                        <td>action</td>
+                        <td>services</td>
+                     </tr>
+                  </tbody>
+               </table></div></div>
+               <p><strong>Sample return</strong></p>
+               <pre>[
+    {
+        "service": 1,
+        "name": "Followers",
+        "type": "Default",
+        "category": "First Category",
+        "rate": "0.90",
+        "min": "50",
+        "max": "10000"
+    },
+    {
+        "service": 2,
+        "name": "Comments",
+        "type": "Custom Comments",
+        "category": "Second Category",
+        "rate": "8",
+        "min": "10",
+        "max": "1500"
+    }
+]</pre>
+               <h4 class="m-t-md"><strong> New order </strong></h4>
+               
+               <div id="add_">
+                   <div class="table-bg">
+                    <div class="table-wr ">
+                      <table class="table mb-3">
+                        <thead>
+                        <tr>
+                           <th class="width-40">Parameter</th>
+                           <th>Explanation</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>key</td>
+                           <td>Your API Key</td>
+                        </tr>
+                        <tr>
+                           <td>action</td>
+                           <td>add</td>
+                        </tr>
+                        <tr>
+                           <td>service</td>
+                           <td>Servis ID</td>
+                        </tr>
+                        <tr>
+                           <td>link</td>
+                           <td>Service connection</td>
+                        </tr>
+                        <tr>
+                           <td>quantity</td>
+                           <td>Quantity</td>
+                        </tr>
+                        <tr>
+                           <td>runs (optionally)</td>
+                           <td>Runs to deliver</td>
+                        </tr>
+                        <tr>
+                           <td>interval (optionally)</td>
+                           <td>Interval in minutes</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div></div>
+               <p><strong>Sample return</strong></p>
+               <pre>{
+    "order": 23501
+}</pre>
+               <h4 class="m-t-md"><strong> Order status </strong></h4>
+               <div class="table-bg">
+                    <div class="table-wr ">
+                      <table class="table mb-3">
+                        <thead>
+                     <tr>
+                        <th class="width-40">Parameter</th>
+                        <th>Explanation</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>key</td>
+                        <td>Your API Key</td>
+                     </tr>
+                     <tr>
+                        <td>action</td>
+                        <td>status</td>
+                     </tr>
+                     <tr>
+                        <td>order</td>
+                        <td>Order ID</td>
+                     </tr>
+                  </tbody>
+               </table></div></div>
+               <p><strong>Sample return</strong></p>
+               <pre>{
+    "charge": "0.27819",
+    "start_count": "3572",
+    "status": "Partial",
+    "remains": "157",
+    "currency": "USD"
+}</pre>
+               <h4 class="m-t-md"><strong> User balance </strong></h4>
+                <div class="table-bg">
+                    <div class="table-wr ">
+                      <table class="table mb-3">
+                        <thead>
+                     <tr>
+                        <th class="width-40">Parameter</th>
+                        <th>Explanation</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>key</td>
+                        <td>Your API Key</td>
+                     </tr>
+                     <tr>
+                        <td>action</td>
+                        <td>balance</td>
+                     </tr>
+                  </tbody>
+               </table></div></div>
+               <p><strong>Sample return</strong></p>
+               <pre>{
+    "balance": "100.84292",
+    "currency": "USD"
+}</pre>
+               <a href="example.txt" class="btn btn-default m-t" target="_blank">Sample PHP file</a>
+            </div>
+         </div>
+      </div>
+   </div></div></div></div>
+</div></div></div>
+
+
+<br>
+{% include 'footer.twig' %}

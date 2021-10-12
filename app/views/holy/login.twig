@@ -1,0 +1,1296 @@
+{% include 'header.twig' %}
+                       <div class="main-banner item-bg1">
+   <div class="container-fluid">
+      <div class="smallAnimBox one">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox two">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+<!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+      <div class="smallAnimBox three">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox four">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox five">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox six">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox seven">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox eight">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox nine">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="smallAnimBox ten">
+         <span class="animated icon-32"><i class="fas fa-plus"></i></span>
+         <span class="animated icon-33"><i class="fas fa-heart"></i></span>
+         <span class="animated icon-34"><i class="fas fa-grin-hearts"></i></span>
+         <span class="animated icon-35"><i class="fas fa-thumbs-up"></i></span>
+      </div>
+      <div class="starContainer">
+         <div class="stars star-1"></div>
+         <div class="stars star-2"></div>
+         <div class="stars star-3"></div>
+         <div class="stars star-4"></div>
+         <div class="stars star-5"></div>
+         <div class="stars star-6"></div>
+         <div class="stars star-7"></div>
+      </div>
+   </div>
+   <div class="sigma_subheader-shape waves">
+      <div class="wave"></div>
+      <div class="wave"></div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="main-banner-content">
+                <h1>{{ site['site_name'] }}<br><h1 style="font-size:2em;">#1 SMM PANEL in the Market<span id="typewriter"></span></h1><span id="typewriter"></span></h1>
+               
+               <p>Social Media Boost and 100% High Quality for all social networks. You are Own the Cheap Social Media Boost. Our SMM reseller System benefit your brand</p>
+            </div>
+            <!-- form -->
+            <div class="row formRow">
+               <div class="col-lg-12 col-md-12 col-sm-12">
+                   {% if errorText %}
+                    <div class="alert alert-dismissible alert-danger">
+                      <button type="button" class="close" data-dismiss="alert">×</button>
+                      {{ errorText }}
+                    </div>
+                  {% endif %}
+                  {% if successText %}
+                    <div class="alert alert-dismissible alert-success">
+                      <button type="button" class="close" data-dismiss="alert">×</button>
+                      {{ successText }}
+                    </div>
+                  {% endif %}
+                  <div class="SignForm">
+                     <form method="post" action="/" class="component_form_group component_checkbox_remember_me">
+                     <input type="hidden" name="_csrf" value="">
+                                                               <div class="row fieldsRow">
+                        <div class="col-sm-5">
+                           <div class="form-group">
+                              <input type="text" class="form-control inputField" id="username" type="text" name="username" placeholder="Username">
+                              <span><i class="fas fa-user-tie"></i></span>
+                           </div>
+                        </div>
+                     <div class="col-sm-5">
+                        <div class="form-group">   
+                           <input class="form-control inputField" id="password" type="password" name="password" placeholder="Password">
+                           <span><i class="fas fa-key"></i></span>
+                        </div>
+                     </div>
+                     <div class="col-sm-2 col-xs-12">
+                        <button type="submit" class="Signbtn">
+                            
+                        <i class="fas fa-paper-plane"></i>
+                        </button>
+                     </div>
+                  </div>                      
+                  <div class="row optionsRow">
+                     <div class="col-sm-4 col-xs-12 text-left">
+                        <input type="checkbox" name="LoginForm[remember]" value="1" id="remember">Remember Me
+                     </div>
+                                          <div class="col-sm-4 col-xs-12 text-center">
+                       <a href="/signup" class="forgot-password">Register Here</a>
+                     </div>
+                                                               <div class="col-sm-4 col-xs-12 text-right">
+                        <a href="/resetpassword">Forgot password?</a>
+                     </div>
+                                
+                  </div>
+<div class="row">
+                  <div class="col-sm-12">
+                    <br> 
+                     
+                       </div>
+                       </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <!-- form -->            
+      </div>
+   </div>
+</div>
+<div class="animation-wrapper">
+   <div class="stagger-visualizer">
+      <div class="cursor"></div>
+      <div class="dots-wrapper"></div>
+   </div>
+</div>
+</div>
+<!-- brand section -->
+<section class="brand-sec">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251330/smmduniya/smmtoppanel_qwnmos.png" alt="{{ site['site_name'] }}" />
+         </div>
+      </div>
+   </div>
+</section>
+<!-- brand section -->
+<!-- counters section -->
+<section class="counters-sec">
+   <div class="container-fluid">
+      <div class="row"> 
+         <div class="col-sm-3">
+            <div class="single-fun-fact">
+               <div class="icon">
+                  <i class="fal fa-trophy-alt"></i>
+               </div>
+               <h3>
+                  <span class="odometer" id="odometer3" data-count="1">0</span>
+               </h3>
+               <p>Ranking in Market</p>
+            </div>
+         </div>         
+         <div class="col-sm-3">
+            <div class="single-fun-fact">
+               <div class="icon">
+                  <i class="fal fa-check-square"></i>
+               </div>
+               <h3>
+                  <span class="odometer" id="odometer" data-count="223925">00,000</span>
+               </h3>
+               <p>Completed Order</p>
+            </div>
+         </div>
+         <div class="col-sm-3">
+            <div class="single-fun-fact">
+               <div class="icon">
+                  <i class="fal fa-smile"></i>
+               </div>
+               <h3>
+                  <span class="odometer" id="odometer1" data-count="8956  ">000</span>
+               </h3>
+               <p>Happy Clients</p>
+            </div>
+         </div>
+         <div class="col-sm-3">
+            <div class="single-fun-fact">
+               <div class="icon">
+                  <i class="fal fa-cogs"></i>
+               </div>
+               <h3>
+                  <span class="odometer" id="odometer2" data-count="450 ">0,000</span>
+               </h3>
+               <p>Total Service</p>
+            </div>
+         </div>       
+      </div>
+   </div>
+</section>
+<!-- counters section -->
+<!-- why us -->
+<section class="choose-area section-bottom">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">Our Top Social Media Boost brings more likes and views on the company's profile posts</span>
+               <h2 class="section-title">Social Media Boost also produces good quality content on your posts with exciting keywords, positive comments and regular updates to make it more noticeable among the audience &amp; <br> Digital Services.</h2>
+               <p class="section-text">Get the best and cheap Social Media Boost services. Now you can save your time and efforts by marinating your social Social Media Boost in a much efficient manner. </p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="choose-left wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
+               <div class="choose-img text-right">
+                  <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1622054424/smmduniya/why-choose-us_dp7fva.jpg" alt="chosse">
+               </div>
+               <div class="chose-list">
+                  <div class="single-chose">
+                     <div class="chose-top">
+                        <div class="icon">
+                           <i class="fal fa-calendar-alt"></i>
+                        </div>
+                        <h2 class="counter-count"><span class="counter">7</span>+</h2>
+                     </div>
+                     <div class="chose-text">
+                        <h4>Years of Experience</h4>
+                     </div>
+                  </div>
+                  <div class="single-chose">
+                     <div class="chose-top">
+                        <div class="icon">
+                           <i class="fal fa-smile-beam"></i>
+                        </div>
+                        <h2 class="counter-count"><span class="counter">35000</span>+</h2>
+                     </div>
+                     <div class="chose-text">
+                        <h4>Happy clients</h4>
+                     </div>
+                  </div>
+                  <div class="single-chose">
+                     <div class="chose-top">
+                        <div class="icon">
+                           <i class="fal fa-truck"></i>
+                        </div>
+                        <h2 class="counter-count"><span class="counter">700M</span>+</h2>
+                     </div>
+                     <div class="chose-text">
+                        <h4>Projects complete</h4>
+                     </div>
+                  </div>
+                  <div class="single-chose">
+                     <div class="chose-top">
+                        <div class="icon">
+                           <i class="fal fa-user-headset"></i>
+                        </div>
+                        <h2 class="counter-count"><span class="counter">24</span>Hr</h2>
+                     </div>
+                     <div class="chose-text">
+                        <h4>Technical support</h4>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-5 offset-lg-1">
+            <div class="choose-right wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
+               <div class="featurs-list">
+                  <div class="single-feature">
+                     <h3>Unlimited Features</h3>
+                     <p>We provide all kind of social media likes, followers, subscriber, comments etc.</p>
+                  </div>
+                  <div class="single-feature">
+                     <h3>Communication &amp; Sharing</h3>
+                     <p>Our Social Media Boost has 24/7 customer support service</p>
+                  </div>
+                  <div class="single-feature">
+                     <h3>Fast and secure</h3>
+                     <p>Cheap Social Media Boost is the #1 fastest and secure website around the world.</p>
+                  </div>
+                  <div class="single-feature">
+                     <h3>User friendly</h3>
+                     <p>{{ site['site_name'] }} easy to use and reliable</p>
+                  </div>
+               </div>
+               <a href="services" class="btn-main bg-btn">Explore More <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>                        
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-11"><i class="fab fa-whatsapp"></i></span>
+      <span class="animated icon-12"><i class="fab fa-snapchat-ghost"></i></span>
+      <span class="animated icon-13"><i class="fab fa-tiktok"></i></span>
+      <span class="animated icon-14"><i class="fab fa-linkedin-in"></i></span>
+      <span class="animated icon-15"><i class="fab fa-pinterest-p"></i></span>
+      <span class="animated icon-16"><i class="fab fa-youtube"></i></span>
+   </div>
+</section>
+<!-- why us -->
+<!-- how it works -->
+<section class="how-it-works">
+   <div class="cards-1">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 text-center">
+               <div class="section-title-area text-center">
+                  <span class="section-sub-title">Social Media Website</span>
+                  <h2 class="section-title">Market with Top Social Media Boost</h2>
+                  <p class="section-text">We are only 24 hours each day and seven times every week to assist you and support you with all of your demands and services around the day. Don’t go anywhere else, we are here able to serve you and assist you with all of your Social Media needs. We have knowledgeable Social Media Boost able to serve you anytime you would like with instant start and amazing speed to deliver your Social Media work with efficacy and speed. We are expecting your Cheap Social Media orders starting today and please note that we accept auto payments for your orders and that we have API to serve any Social Media Boost Owner around the globe.
+                     What are you continue to expecting? start placing your Social Media Orders now on our Social Media Website for the most cost-effective ever and if you would like anything please contact us on our 24/7 Support.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-3">
+               <div class="single-step">
+                  <div class="cont">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251350/smmduniya/icons8-add-user-male-100_w8bkrw_odsrjc.png" alt="icon">
+                     </span>
+                     <div class="text">
+                        <h3>Register & log in</h3>
+                        <p>Creating an account is the first step, then you need to log in.</p>
+                     </div>
+                  </div>
+                  <span class="stepNo"><span>Details</span> <i class="fal fa-chevron-right"></i></span>
+               </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="single-step">
+                  <div class="cont">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251365/smmduniya/icons8-money-bag-100_rdsd5s_h5fi5h.png" alt="icon&quot;&quot;">
+                     </span>
+                     <div class="text">
+                        <h3>Add funds</h3>
+                        <p>Next, pick a payment method and add funds to your account.</p>
+                     </div>
+                  </div>
+                  <span class="stepNo"><span>Details</span> <i class="fal fa-chevron-right"></i></span>
+               </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="single-step">
+                  <div class="cont">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251382/smmduniya/icons8-checklist-100_kytpeb_ox8spn.png" alt="icon">
+                     </span>
+                     <div class="text">
+                        <h3>Select a service</h3>
+                        <p>Select the services you want and get ready to receive more publicity.</p>
+                     </div>
+                     <span class="stepNo"><span>Details</span> <i class="fal fa-chevron-right"></i></span>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="single-step">
+                  <div class="cont">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251401/smmduniya/icons8-smiling-100_bxifhb_zakoor.png" alt="icon">
+                     </span>
+                     <div class="text">
+                        <h3>Enjoy superb results</h3>
+                        <p>You can enjoy incredible results when your order is complete.</p>
+                     </div>
+                  </div>
+                  <span class="stepNo"><span>Details</span> <i class="fal fa-chevron-right"></i></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-17"><i class="fab fa-twitter"></i></span>
+      <span class="animated icon-18"><i class="fab fa-instagram"></i></span>
+      <span class="animated icon-19"><i class="fad fa-hashtag"></i></span>
+      <span class="animated icon-20"><i class="fab fa-google-plus-g"></i></span>
+      <span class="animated icon-21"><i class="fab fa-facebook-f"></i></span>
+      <span class="animated icon-22"><i class="fab fa-dribbble"></i></span>
+   </div>
+</section>
+<!-- how it works -->
+<!-- our services -->
+<section class="our-services">
+   <div class="top-shape">
+      <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251424/smmduniya/shape2_r0plwm_paade0.svg" alt="shape">
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">Features Of</span>
+               <h2 class="section-title">Our Social Media Boost <br></h2>
+               <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row align-items-center">
+         <div class="col-sm-7">
+            <div class="row">
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        1
+                     </div>
+                     <h3>Fast Social Media Boost</h3>
+                     <p>brings you likes and views on your company's profile posts so it will look more interesting, triggering a response from the audience as well as customers.</p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        2
+                     </div>
+                     <h3>Best Social Media Boost </h3>
+                     <p>provides, positive comments and reviewsto make it more noticeable among the audience.</p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        3
+                     </div>
+                     <h3>The biggest benefits</h3>
+                     <p> is that {{ site['site_name'] }} promotes your business effectively with less timeand friendly budget.</p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        4
+                     </div>
+                     <h3>Once your business</h3>
+                     <p> profile gain popularity on social media, it easilygets recognized in the market</p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        5
+                     </div>
+                     <h3>With 24-hour </h3>
+                     <p>customer support service provided by {{ site['site_name'] }},you don't have to worry aboutmarketing of your business.</p>
+                  </div>
+               </div>
+               <div class="col-sm-6">
+                  <div class="single-ser">
+                     <div class="num-div">
+                        6
+                     </div>
+                     <h3>Cheap Social Media Boost </h3>
+                     <p>allows you to increasethe engagement of your brand on various social media platforms, such as Facebook, Twitter, etc. and helps to reach a broader target audience.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-sm-5">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1622054550/smmduniya/services-sec-img_swyqle.jpg" alt="main-img">
+         </div>
+      </div>
+   </div>
+   <div class="bottom-shape">
+      <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251472/smmduniya/shape2_r0plwm_swgaue.svg" alt="shape">
+   </div>
+   <div class="container-fluid">            
+      <span class="animated icon-23"><i class="fab fa-linkedin-in"></i></span>
+      <span class="animated icon-24"><i class="fab fa-pinterest-p"></i></span>
+      <span class="animated icon-25"><i class="fab fa-behance"></i></span>
+   </div>
+</section>
+<!-- our services -->    
+<!-- marketing area -->
+<section class="spilited-area">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+            <div class="headings">
+               <h3>Marketing with</h3>
+               <h2>{{ site['site_name'] }}</h2>
+            </div>
+            <p>To make your brands stand out in the modern competitive market is extremely difficult.Ineffective marketing doesn't generate revenue in the least.<br>{{ site['site_name'] }} is the cheapest Social Media Boost will provide you with the effective marketing services.You require marketing platforms to succeed in your customers. All the services, including likes, views, shares and everything is organic and from real human accounts. Getting engagement from real people helps you boost your insights. We don’t compromise on quality and provide service from real accounts.</p>
+            <div class="lists">
+               <ul>
+                  <li>Youtube Services In Cheap Price</li>
+                  <li>Instagram Services In Cheap Price</li>
+                  <li>Facebook Services In Cheap Price</li>
+               </ul>
+               <ul>
+                  <li>Twitter Services In Cheap Price</li>
+                  <li>TikTok Services In Cheap Price</li>
+                  <li>Spotify Services In Cheap Price</li>
+               </ul>
+            </div>
+            <a href="services" class="btn-main bg-btn">Explore More <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>                        
+         </div>
+         <div class="col-lg-6 img-col">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251495/smmduniya/shaped-girl_u3reor.jpg" alt="marketing">
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-26"><i class="fab fa-whatsapp"></i></span>
+      <span class="animated icon-27"><i class="fab fa-behance"></i></span>
+      <span class="animated icon-28"><i class="fab fa-tiktok"></i></span>            
+      <span class="animated icon-29"><i class="fab fa-youtube"></i></span>
+      <span class="animated icon-30"><i class="fab fa-facebook-f"></i></span>
+      <span class="animated icon-31"><i class="fab fa-dribbble"></i></span>
+   </div>
+</section>
+<!-- marketing area -->    
+<!-- What we offer -->
+<section class="what-we-offer">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">What We Offer</span>
+               <h2 class="section-title">as a company</h2>
+               <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media. We provide guaranteed service on our website. All the service will be no drop service. If any of the service gets dropped, we will provide a refill for that service without any charges. That only happens if you get the best services for your Social Media Accounts</p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-5">
+            <ul>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251516/smmduniya/optimization_tmuk3u.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Search Engine Optimization </h3>
+                     <p>Get more targeted visitors<span id="dots1" class="element-shown">...</span><span id="more1" class="element-hidden"> on you website with fast and effective strategies </span></p>
+                     <button onclick="myFunction1()" id="myBtn1">Read more</button>                                
+                  </div>
+               </li>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251536/smmduniya/strategy_lnbvcf.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Social Media Strategy</h3>
+                     <p>Grow your brand on social <span id="dots2" class="element-shown">...</span><span id="more2" class="element-hidden">media with advance , and secure way.</span></p>
+                     <button onclick="myFunction2()" class="myBtn2">Read more</button>
+                  </div>
+               </li>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251557/smmduniya/time_and_data_dovaht.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Customer support</h3>
+                     <p>Get 24/7 customer support services<span id="dots3" class="element-shown">...</span><span id="more3" class="element-hidden"> and proper view of your campion</span></p>
+                     <button onclick="myFunction3()" id="myBtn3">Read more</button>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         <div class="col-lg-2">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1622054683/smmduniya/what-we-offer_fv99zp.jpg" alt="girl">
+         </div>
+         <div class="col-lg-5">
+            <ul>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251584/smmduniya/media_jmrnbk.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Online Media Management</h3>
+                     <p>{{ site['site_name'] }} handles your<span id="dots4" class="element-shown">...</span><span id="more4" class="element-hidden"> online presence on social media platforms like Facebook, Instagram, and Twitter by creating, publishingcontent</span></p>
+                     <button onclick="myFunction4()" id="myBtn4">Read more</button>
+                  </div>
+               </li>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251610/smmduniya/analysis_v8fpqs.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Reporting & Analysis</h3>
+                     <p>Get complete reports and analysis<span id="dots5" class="element-shown">...</span><span id="more5" class="element-hidden"> you’re your campion .with audience activity.</span></p>
+                     <button onclick="myFunction5()" id="myBtn5">Read more</button>
+                  </div>
+               </li>
+               <li>
+                  <span class="icon"><img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251633/smmduniya/recovery_b0bvnl.png" alt="icon"></span>
+                  <div class="text">
+                     <h3>Penalty Recovery</h3>
+                     <p>Ourservice is designed to find <span id="dots6" class="element-shown">...</span><span id="more6" class="element-hidden">out what went wrong, then fix it. So you get your website traffic .</span></p>
+                     <button onclick="myFunction6()" id="myBtn6">Read more</button>
+                  </div>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-17"><i class="fab fa-twitter"></i></span>
+      <span class="animated icon-18"><i class="fab fa-instagram"></i></span>
+      <span class="animated icon-19"><i class="fad fa-hashtag"></i></span>
+      <span class="animated icon-20"><i class="fab fa-google-plus-g"></i></span>
+      <span class="animated icon-21"><i class="fab fa-facebook-f"></i></span>
+      <span class="animated icon-22"><i class="fab fa-dribbble"></i></span>
+   </div>
+</section>
+<!-- What we offer -->
+<!-- marketing area -->
+<section class="spilited-area spilited-area-two">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6 img-col">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1622054726/smmduniya/shockedg_mx967w.jpg" alt="marketing">
+         </div>
+         <div class="col-lg-6">
+            <div class="headings">
+               <h3>Marketing with</h3>
+               <h2>{{ site['site_name'] }}</h2>
+            </div>
+            <p>Unlike other Social Media Boost  we have more  payments methods.<br>We also provide 24*7 customer support thought Skype, live chat etc. We also have options for refunding or canceling orders, if any issue arises. Thus, we promise that your money will always be in the safest hands.</p>
+            <div class="lists">
+               <ul>
+                  <li>Youtube Services In Cheap Price</li>
+                  <li>Instagram Services In Cheap Price</li>
+                  <li>Facebook Services In Cheap Price</li>
+               </ul>
+               <ul>
+                  <li>Twitter Services In Cheap Price</li>
+                  <li>TikTok Services In Cheap Price</li>
+                  <li>Spotify Services In Cheap Price</li>
+               </ul>
+            </div>
+            <a href="services" class="btn-main bg-btn">Explore More <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>                        
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-11"><i class="fab fa-whatsapp"></i></span>
+      <span class="animated icon-12"><i class="fab fa-snapchat-ghost"></i></span>
+      <span class="animated icon-13"><i class="fab fa-tiktok"></i></span>
+      <span class="animated icon-14"><i class="fab fa-linkedin-in"></i></span>
+      <span class="animated icon-15"><i class="fab fa-pinterest-p"></i></span>
+      <span class="animated icon-16"><i class="fab fa-youtube"></i></span>
+   </div>
+</section>
+<!-- marketing area -->
+<!-- our working areas -->
+<section class="our-working-areas">
+   <div class="top-shape">
+      <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251660/smmduniya/shape4_vudy11_otvjaz.svg" alt="shape-4">
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center text-white">
+               <span class="section-sub-title">In What Areas</span>
+               <h2 class="section-title">We are professionally experienced</h2>
+               <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="tab working-area-tab">
+               <ul class="tabs active">
+                  <li class="current">
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251687/smmduniya/facebook-w_zzo5w5_qor0cn.png" alt="icon-1">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251724/smmduniya/facebook_k4c6q6.png" alt="icon-1">
+                     </span>                                    
+                     <span>Facebook</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251766/smmduniya/instagram-w_y1qxqi_auga7s.png" alt="icon-2">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251804/smmduniya/instagram_hsmhdl.png" alt="icon-2">
+                     </span>                                    
+                     <span>Instagram</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251842/smmduniya/twitter-w_daypuu_uwqbjc.png" alt="icon-3">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251958/smmduniya/twitter_xcwlrh.png" alt="icon-3">
+                     </span>                                    
+                     <span>Twitter</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251882/smmduniya/soundcloud-w_jugmlo_qppzp6.png" alt="icon-4">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618251996/smmduniya/soundcloud_helh8d.png" alt="icon-4">
+                     </span>                                    
+                     <span>Soundcloud</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252062/smmduniya/youtube-w_pm4a3e_pyafwj.png" alt="icon-5">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252096/smmduniya/youtube_uphy4z.png" alt="icon-5">
+                     </span>                                    
+                     <span>Youtube</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252136/smmduniya/telegram-w_mylzdl_vdgzuh.png" alt="icon-6">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252201/smmduniya/telegram_nl8jrn.png" alt="icon-6">
+                     </span>                                    
+                     <span>Telegram</span>
+                     </a>
+                  </li>
+               </ul>
+               <div class="tab_content">
+                  <div class="tabs_item fb">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="digital-experience-content">
+                              <h3>Facebook Services</h3>
+                              <p>{{ site['site_name'] }} brings you Facebookmarketingservice which bring you high qualitylikes followers,positive reviews and comments on your business profile .</p>
+                              <p>Because Facebookis one of the biggest social media platform with more than2M around the world there are many small and large brand on Facebook .people spend hours of hours on Facebook so why not grow your brand online on Facebook with world cheapest and fastest panel grow your business profile .get like, comments and positive reviews on your Facebook brand profile so it looks more attractive, trustworthy.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252243/smmduniya/placeholder_cuuwao.png" alt="placeholder">
+                              <i class="fab fa-facebook-f"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item insta">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="working-area-content">
+                              <h3>Instagram Services</h3>
+                              <p>As compare to other social media networks Instagram is more popular among the teenagers, there are a lots of brands and content creators on Instagram .</p>
+                              <p>That’s why {{ site['site_name'] }} is here foryou to get more followers, likes, comments so you’re your page or brand profile looks more effective so more people engaged with your business   and your brand will get more popular among teenagers.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252284/smmduniya/placeholder_n3aeyo.png" alt="placeholder">
+                              <i class="fab fa-instagram"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item twit">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="working-area-content">
+                              <h3>Twitter Services</h3>
+                              <p>Twitter is more popular for celebrityor famous person to communicate with their fan .</p>
+                              <p>That’s why {{ site['site_name'] }} is here for you to get more followers, retweet , comments so you’re your twitter profile looks more effective so more people engaged with youand you will get more popular among people on twitter.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252325/smmduniya/placeholder_kk7mvw.png" alt="placeholder">
+                              <i class="fab fa-twitter"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item sndcld">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="working-area-content">
+                              <h3>Soundcloud Services</h3>
+                              <p>Soundcloud is music platform it is very popular among those people who like music</p>
+                              <p>With {{ site['site_name'] }} you can get likes and share on your music so your music looks more attractive for people who visit your profile.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252370/smmduniya/placeholder_sfixlm.png" alt="placeholder">
+                              <i class="fab fa-soundcloud"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item ytube">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="working-area-content">
+                              <h3>Youtube Services</h3>
+                              <p>Youtube is video sharing platform it is one the best video sharing platform so there for it is very important for brands to get popular.</p>
+                              <p>{{ site['site_name'] }} provide you channel subscriber , watch time , video likes if you have any youtube channel and you are surfing from subscriber you can get and grow on youtube .with our services your channel will look more effective .</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252417/smmduniya/placeholder_iygbhy.png" alt="placeholder">
+                              <i class="fab fa-youtube"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item tgram">
+                     <div class="row align-items-center">
+                        <div class="col-lg-6">
+                           <div class="working-area-content">
+                              <h3>Telegram Services</h3>
+                              <p>Telegram is chatting and media sharing platform so there for it is very important for people those who want to communicate with people. Social Media Boost meaning is Cheapest  website, where People Buy-Sell Social Media Marketing Service Such as Facebook Fans, Twitter devotees, Instagram Followers, YouTube watch time Views, Website Traffic, tiktok likes, and more significant associations.</p>
+                              <p>{{ site['site_name'] }} provide you channel subscriber , active user , if you have any telegram channel and you are surfing from subscriber you can get and grow on telegram .with our services your channel will look more effective.</p>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="working-area-image">
+                              <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252462/smmduniya/placeholder_os78v9.png" alt="placeholder">
+                              <i class="fab fa-telegram-plane"></i>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="bottom-shape">
+      <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252509/smmduniya/shape4_vudy11_hiin7g.svg" alt="shape-4">
+   </div>
+   <div class="container-fluid">            
+      <span class="animated icon-23"><i class="fab fa-snapchat-ghost"></i></span>
+      <span class="animated icon-24"><i class="fab fa-tiktok"></i></span>
+      <span class="animated icon-25"><i class="fab fa-youtube"></i></span>
+   </div>
+</section>
+<!-- our working areas -->
+<!-- client testimonial -->
+<section class="client-testimonial">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">Our</span>
+               <h2 class="section-title">Customers of Social Media Panel</h2>
+               <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.Buy Cheap Social Media followers, likes, Views, Share instantly.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <div class="ot-industries">
+         <div id="ot-industries-slider" class="owl-carousel owl-theme industries-inner">
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252576/smmduniya/user1_hrogcc_ywu5vn.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Cressida <span>Model</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252719/smmduniya/user7_amnaya_ihukoc.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Jasper <span>photographer</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252792/smmduniya/user8_am8frw_bkptkf.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Florence <span>writer</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252886/smmduniya/user2_hlqmu7_kwwfog.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Philippa <span>Blogger</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618252982/smmduniya/user3_kbp1gp_msjxdv.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Harvey <span>businessman</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618253057/smmduniya/user5_top9qv_mzky16.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Freya <span>photographer</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618253149/smmduniya/user6_yczwk0_x3lxyf.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Sebastian <span>Model</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="indus-item">
+               <div class="item-inner">
+                  <div class="overlay"></div>
+                  <div class="i-image">
+                     <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618253246/smmduniya/user4_ltqjeo_euavfi.png" alt="user-img">
+                  </div>
+                  <div class="iinfo">
+                     <h6>Maisie <span>influencer</span></h6>
+                     <div class="itext">
+                        The global economy is moving towards a new identity. In order to remain competitive and profitable, the banking and finance.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-26"><i class="fab fa-whatsapp"></i></span>
+      <span class="animated icon-27"><i class="fab fa-behance"></i></span>
+      <span class="animated icon-28"><i class="fab fa-tiktok"></i></span>            
+      <span class="animated icon-29"><i class="fab fa-youtube"></i></span>
+      <span class="animated icon-30"><i class="fab fa-facebook-f"></i></span>
+      <span class="animated icon-31"><i class="fab fa-dribbble"></i></span>
+   </div>
+</section>
+<!-- client testimonial -->
+<!-- video section -->
+<section class="video-sec">
+   <div class="container">
+      <div class="videoCont">
+         <div class="row">
+            <div class="col-lg-12 text-center">
+               <div class="section-title-area text-center text-white">
+                  <span class="section-sub-title">How to make order</span>
+                  <h2 class="section-title">to Avail {{ site['site_name'] }}.COM services.</h2>
+                  <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12">       
+               <button type="button" class="btn video-btn" data-toggle="modal" data-target="#videoModal" src="https://www.youtube.com/embed/h9U0mLb9DWc">
+               <i class="fas fa-play"></i>
+               <span class="circle-1"></span>
+               <span class="circle-2"></span>
+               </button>        
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- video section -->
+<!-- faq section -->
+<section class="spilited-area faq-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">Having any</span>
+               <h2 class="section-title">Frequent Ask Questions?</h2>
+               <p class="section-text">It is about us being able to offer help with the branding campaign, product presentation, and advertisement running across social media.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+            <div id="accordion">
+               <div class="card">
+                  <div class="card-header" id="headingOne">
+                     <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How to place new order? 
+                        </button>
+                     </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                     <div class="card-body">
+                        In the field Type — Select the type of services from the drop-down list. In the field Link — Fill the link to the page in the format. In the field Quantity — Fill the needed quantity of likes/followers. All the services, including likes, views, shares and everything is organic and from real human accounts. Getting engagement from real people helps you boost your insights. We don’t compromise on quality and provide service from real accounts.
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingTwo">
+                     <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How do I get my Deposit Bonus? 
+                        </button>
+                     </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                     <div class="card-body">
+                        Once you have created your account on our website, go ahead and deposit at least 10$. Once done, make a ticket and write down the amount deposit we will then add 10% to your account balance!
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingThree">
+                     <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Cancel button / Refill button is not working for me? 
+                        </button>
+                     </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                     <div class="card-body">
+                        The cancel or refill button sends a trigger to cancel or refill an order, it doesn't work instantly, it's just a trigger, sometimes it's too late to stop an order, and sometimes an order might not need refill
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingFour">
+                     <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Wrong Link/Service - Link Doesn't work anymore
+                        </button>
+                     </h5>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                     <div class="card-body">
+                        Cancellation is not guaranteed. We will forward the request to our provider and hopefully he will acknowledge the request. If they do not accept, we won't be able to cancel it.
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-header" id="headingFive">
+                     <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What is "Instagram impressions"? 
+                        </button>
+                     </h5>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                     <div class="card-body">
+                        Impression means reach (also how many users have seen your post) it is mostly used with brands, they will ask you to show them statistic of the impressions your posts have
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 img-col">
+            <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1618253331/smmduniya/faq-img1_k5gl0h_cqwjdn.png" alt="faq">
+         </div>
+      </div>
+   </div>
+   <div class="container-fluid">
+      <span class="animated icon-26"><i class="fab fa-whatsapp"></i></span>
+      <span class="animated icon-27"><i class="fab fa-behance"></i></span>
+      <span class="animated icon-28"><i class="fab fa-tiktok"></i></span>            
+      <span class="animated icon-29"><i class="fab fa-youtube"></i></span>
+      <span class="animated icon-30"><i class="fab fa-facebook-f"></i></span>
+      <span class="animated icon-31"><i class="fab fa-dribbble"></i></span>
+   </div>
+</section>
+<section class="payMethods">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12 text-center">
+            <div class="section-title-area text-center">
+               <span class="section-sub-title">Social Media Website</span>
+               <h2 class="section-title">Payment methods on Social Media Boost</h2>
+               <p class="section-text">It is about our cheap Social Media Boost being able to offer help with the branding campaign, product presentation, and advertisement running across social media.</p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-sm-12">
+            <div class="tab payment-tabs">
+               <ul class="tabs active">
+                  <li class="current">
+                     <a href="#">
+                     <span class="icon">
+                     <i class="far fa-credit-card"></i>
+                     </span>                                    
+                     <span>Card Payments</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <i class="fab fa-cc-paypal"></i>
+                     </span>                                    
+                     <span>Paypal</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <i class="fab fa-cc-amazon-pay"></i>
+                     </span>                                    
+                     <span>Paytm</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <i class="fab fa-bitcoin"></i>
+                     </span>                                    
+                     <span>Bitcoin</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <i class="far fa-money-bill-alt"></i>
+                     </span>                                    
+                     <span>Perfect Money</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                     <span class="icon">
+                     <i class="fab fa-stripe"></i>
+                     </span>                                    
+                     <span>Stripe</span>
+                     </a>
+                  </li>
+               </ul>
+<!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+               <div class="tab_content">
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617978599/smmduniya/25826-5-major-credit-card-logo-image_krilax.png" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Visa credit cards</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617978643/smmduniya/paypal-784404_1280_hjl6tr.png" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Master Card</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617978738/smmduniya/searchpng.com-paytm-logo-transparent-png-free-download_zmfiur.png" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Paytm</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617978836/smmduniya/Bitcoin_logo_kyupv6.svg" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Bitcoin</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617978967/smmduniya/Perfect_Money_aoecb4.png" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Dsicover network</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tabs_item">
+                     <div class="row align-items-center">
+                        <div class="col-sm-6">
+                           <img src="https://res.cloudinary.com/dlcqtguzh/image/upload/v1617979031/smmduniya/Stripe_Logo_2C_revised_2016_iz1zi9.svg" alt="pay-method" />
+                        </div>
+                        <div class="col-sm-6">
+                           <h3>Western Union</h3>
+                           <p>any desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for </p>
+                           <p>'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<div class="bubbles_wrap">
+   <div class="bubble x1"></div>
+   <div class="bubble x2"></div>
+   <div class="bubble x3"></div>
+   <div class="bubble x4"></div>
+   <div class="bubble x5"></div>
+   <div class="bubble x6"></div>
+   <div class="bubble x7"></div>
+   <div class="bubble x8"></div>
+   <div class="bubble x9"></div>
+   <div class="bubble x10"></div>
+</div>
+<!-- footer -->
+<!-- video modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModal" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">        
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body">
+            <iframe width="100%" height="350" id="video" src=""></iframe>
+         </div>
+      </div>
+   </div>
+</div>
+{% include 'footer.twig' %}

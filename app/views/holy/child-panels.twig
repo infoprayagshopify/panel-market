@@ -1,0 +1,153 @@
+{% include 'header.twig' %}
+<!-- Main variables *content* -->
+         <div class="app-content">
+            <!-- page-content -->
+            <div class="container-fluid">
+               <div class="row mt-4">
+                  <div class="col-lg-12">
+                     <section class="order-side">
+                        <div class="row">
+                           <div class="col-lg-7 col-12 mb-5 mb-lg-0">
+                              <div class="d-card dc-dblue">
+                                 <div class="d-card-body" id="dc-body">
+									<form action="/child-panels" method="post">
+									     {% if error %}
+                                              <div class="alert alert-dismissible alert-danger">
+                                                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                {{ errorText }}
+                                              </div>
+                                            {% endif %}  
+                                        
+                                            {% if data["childpanel"]["success"] == 1 %}
+                                              <div class="alert alert-dismissible alert-success">
+                                                  <strong> Order Id: </strong> {{ data['childpanel']['id'] }} <br>
+                                                  <strong> Service: </strong> {{ data['childpanel']['service'] }} <br>
+                                                  <strong> Domain: </strong> {{ data['childpanel']['link'] }} <br>
+                                                  <strong> Quantity: </strong> {{ data['childpanel']['quantity'] }} <br>
+                                                  <strong> Charge: </strong> {{ data['childpanel']['price'] }} <br>
+                                              </div>
+                                            {% endif %}
+                                                
+                                            {% if data["childpanel"]["success"] == 2 %}
+                                              <div class="alert alert-dismissible alert-success">
+                                                  <strong> Order Id: </strong> {{ data['childpanel']['id'] }} <br>
+                                                  <strong> Child Panel Renewed Successfully</strong>
+                                              </div>
+                                            {% endif %}
+                                            
+                                            
+										   <div class="form-group mb-4">
+                                            <div class="alert alert-info " id="orderNote">
+                                                <p class="help-block" style="margin-bottom: 5px">Please visit your registrar's dashboard to change nameservers to:</p><ul style="color: #737373; padding-left: 20px"><li>{{ site['ns1'] }}</li><li>{{ site['ns2'] }}</li></ul>        </div>
+                                            </div>
+                                            
+										 <div class="form-group mb-4">
+                                          <label> Domain </label>
+                                          <div class="input-group">
+                                             <input class="form-control" type="text" id="domain" name="domain" value="">
+                                          </div>
+                                       </div>
+                                       <!-- form-group end -->
+                                       <div class="form-group mb-4">
+                                          <label>Currency</label>
+                                          <div class="input-group">
+                                             <select id="createorderform-currency" class="form-control" name="CreateOrderForm[currency]" aria-required="true">
+																									<option value="USD">United States Dollars (USD)</option>
+                                                                                                    <option value="INR">Indian Rupee (INR)</option>
+											 </select>
+                                          </div>
+                                       </div>
+                                       <!-- form-group end -->
+                                       <div class="form-group mb-4">
+                                          <label>Admin username</label>
+                                          <div class="input-group">
+                                             <input class="form-control" type="text" id="createorderform-username" class="form-control" name="username" aria-required="true" value="">
+                                          </div>
+                                       </div>
+                                       <!-- form-group end -->
+                                       <div class="form-group mb-4">
+                                          <label>Admin password</label>
+                                          <div class="input-group">
+                                             <input type="password" id="createorderform-password" class="form-control" name="password" aria-required="true">
+                                          </div>
+                                       </div>
+                                       <!-- form-group end -->
+                                       <div class="form-group mb-4">
+                                          <label>Confirm password</label>
+                                          <div class="input-group">
+                                             <input type="password" id="createorderform-password_confirm" class="form-control" name="password_confirm" aria-required="true">
+                                          </div>
+                                       </div>
+                                       <!-- form-group end -->
+                                       <div class="form-group mb-4">
+                                          <label>Price per month</label>
+                                          <div class="input-group">
+                                             <input class="form-control" type="text" id="price" value="{{ site['childpanel_price'] }} {% if settings['site_currency'] == "TRY" %}{{ "&#8378;" }}
+                                            {% elseif settings['site_currency'] == "USD" %}{{ "&#36;" }}
+                                            {% else %}{{ "₹" }}
+                                            {% endif %}" readonly>
+                                          </div>
+                                       </div>
+									   <!-- form-group end -->
+                                       <button type="submit" class="btn btn-block btn-big-primary" style="background:#185BDC; color:white;" name="submit" value="Submit" id="submit_form">Submit Order</button>                                    </form>
+                                 </div>
+                              </div>
+                              <!-- d-card end -->
+                           </div>
+                           <!-- col item end-->
+                           <div class="col-lg-5 col-12 mb-5 mb-lg-0">
+                              <div class="d-card dc-blue">
+                                 <div class="d-card-body" id="dc2-body" style="overflow-y: auto;">
+                                    <div class="row my-4 py-3">
+                                       <div class="col-md col-12 align-self-center">
+                                          <div class="rep-title">
+                                             <h3>Start Your Own Panel Like Us</h3>
+                                             Pay Just $25 per month and Resell our services at a Higher Price to your customers
+                                          </div>
+                                       </div>
+                                       <div class="col-md-auto col-12 mt-4 mt-md-0 align-self-center">
+                                          <a href="/blog/how-child-panel-works" class="btn btn-outline">Get More Info</a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="d-card p-md-4 p-0 mt-4">
+                                 <div class="d-card mb-4">
+                                    <div class="d-card-body">
+                                       <div class="row my-4 py-3">
+                                          <div class="col-auto mt-4 mt-md-0 align-self-center">
+                                             <img src="https://cdn.mypanel.link/oewf4r/06k7orttscl7uaoi.png" style="max-width:75px" alt="">
+                                          </div>
+                                          <div class="col align-self-center">
+                                             <div style="font-size:15px">Please set your NameServers as follows:</div>
+                                             <div style="font-size: 19px" class="mt-2">
+                                                <p class="mb-0"><strong>{{ site['ns1'] }}</strong></p>
+                                                <p class="mb-0"><strong>{{ site['ns2'] }}</strong></p>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="d-card dc-orange mb-4">
+                                    <div class="d-card-body">
+                                       <div class="row my-4 py-3">
+                                          <div class="col-auto mt-4 mt-md-0 align-self-center">
+                                             <img src="https://cdn.mypanel.link/oewf4r/0q4x7sxy7y2lt4ai.png" style="max-width:75px" alt="">
+                                          </div>
+                                          <div class="col align-self-center">
+Once you have changed the nameservers, Your panel will be active and you will be able to accept payments in your modes and sell services through us. Everything will be managed automatically. You just have to take payments in your accounts and manage clients.                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+                  <!-- page-content end -->
+               </div>
+               <!-- app-content -->
+            </div>
+         </div>
+
+{% include 'footer.twig' %}

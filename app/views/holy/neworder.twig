@@ -1,0 +1,225 @@
+{% include 'header.twig' %}
+
+<div class="container-fluid">
+   <div class="row meters-row">
+      <div class="col-sm-3">
+         <div class="single-meter">
+            <div class="main">
+               <span class="icon">
+               <i class="fal fa-truck-container"></i>
+               </span>
+               <span class="text">
+                  <h3>224057 </h3>
+                  <p>Our orders</p>
+               </span>
+            </div>
+         </div>
+      </div><!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+      <div class="col-sm-3">
+         <div class="single-meter">
+            <div class="main">
+               <span class="icon">
+               <i class="fal fa-credit-card"></i>
+               </span>
+               <span class="text">
+                  <h3>0.0000000</h3>
+                  <p>You have spent</p>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-3">
+         <div class="single-meter" style="cursor:pointer;" onclick="location.href='/child-panels';">
+            <div class="main">
+               <span class="icon">
+               <i class="fal fa-drone"></i>
+               </span>
+               <span class="text">
+                  <h3>Reseller</h3>
+                  <p>to earn money</p>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="col-sm-3">
+         <div class="single-meter">
+            <div class="main">
+               <span class="icon">
+               <i class="fal fa-shield-check"></i>
+               </span>
+               <span class="text">
+                  <h3>
+                     New
+                  </h3>
+                  <p>Account status</p>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-sm-8">
+         <div class="well">
+             {% if user['balance'] < 5 %}
+      <div class="alert alert-dismissible alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Dear @{{ user['username'] }}, </strong> <br>Your balance seems to be running low, don't forget to top up for trouble-free service.
+      </div>
+     {% endif %}
+
+    {% if error %}
+      <div class="alert alert-dismissible alert-danger">
+        {{ errorText }}
+      </div>
+    {% endif %}
+
+    {% if data["order"]["success"] == 1 %}
+      <div class="alert alert-dismissible alert-success">
+          <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+          <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+          <strong> {{ lang["neworder.success.link"] }}: </strong> {{ data['order']['link'] }} <br>
+          <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['quantity'] }} <br>
+          <strong> {{ lang["neworder.success.charge"] }}: </strong> {{ data['order']['price'] }} <br>
+          <strong> {{ lang["neworder.success.balance"] }}: </strong>{{ data['order']['balance'] }} <br>
+      </div>
+    {% endif %}
+    {% if data["order"]["success"] == 2 %}
+      <div class="alert alert-dismissible alert-success">
+         <strong> {{ lang["neworder.success.id"] }}: </strong> {{ data['order']['id'] }} <br>
+         <strong> {{ lang["neworder.success.service"] }}: </strong> {{ data['order']['service'] }} <br>
+         <strong> {{ lang["neworder.success.username"] }}: </strong> {{ data['order']['link'] }} <br>
+         <strong> {{ lang["neworder.success.quantity"] }}: </strong> {{ data['order']['min'] }} - {{ data['order']['max'] }} <br>
+         <strong> {{ lang["neworder.success.posts"] }}: </strong> {{ data['order']['posts'] }} <br>
+         <strong> {{ lang["neworder.success.delay"] }}: </strong>{{ data['order']['delay'] }} <br>
+       </div>
+    {% endif %}
+           <form method="post" action="/">
+
+            <div class="form-group">
+              <label for="orderform-category" class="control-label">{{ lang["neworder.category"] }}</label>
+              <select class="form-control" id="neworder_category" name="categories">
+                {% for category in categories %}
+                    <option value="{{ category["category_id"] }}" >{{ category["category_name"] }}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="orderform-service" class="control-label">{{ lang["neworder.service"] }}</label>
+              <select class="form-control" id="neworder_services" name="services">
+
+              </select>
+            </div>
+
+            <div id="neworder_fields"></div>
+
+            <div class="form-group" id="charge_div">
+              <label for="charge" class="control-label">{{ lang["neworder.charge"] }}</label>
+              <input type="text" class="form-control" id="charge" readonly>
+            </div>
+<!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+        {% if neworderTerms %}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="neworder_check">{{ lang['neworder.recheck'] }}
+            </label>
+          </div>
+        {% endif %}
+            
+          <button type="submit" class="btn btn-primary">{{ lang["neworder.button"] }}</button>
+
+        </form>
+         </div>
+      </div>
+      <div class="col-sm-4">
+         <div class="well">
+      	<div class="tab">
+          <ul class="tabs newOrdersSlide active slick-initialized slick-slider"><button class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button" aria-disabled="true" style="">Previous</button>
+            <div class="slick-list draggable" style="padding: 0px 10px;overflow-x:scroll;"><div class="slick-track" style="opacity: 1; width: 855px; transform: translate3d(0px, 0px, 0px);"><li class="current slick-slide slick-current slick-center" data-slick-index="0" aria-hidden="true" tabindex="0" style="width: 285px;">
+              <a href="#" tabindex="-1">
+              	<i class="fal fa-file-exclamation"></i> Pre order instructions
+              </a>
+            </li><li class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" style="width: 285px;">
+              <a href="#" tabindex="-1">
+              	<i class="fal fa-video"></i> Video tutorial
+              </a>
+            </li><li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" style="width: 285px;">
+              <a href="#" tabindex="-1">
+              	<i class="fal fa-phone-alt"></i> Contact us
+              </a>
+            </li></div></div>
+            
+            
+          <button class="slick-next slick-arrow" aria-label="Next" type="button" style="" aria-disabled="false">Next</button></ul>
+          <div class="tab_content">
+          	<div class="tabs_item preOrder">
+          		<h3>Please give Attention to the points below.</h3>
+              	<ul>
+              		<li>⚠️😀Create a video on youtube about how to sign up on Supercheapsmm.com, how to add fund, how to order, how to earn money by selling smm services from Supercheapsmm ( Title should be Include Supercheapsmm - smm panel ) and get 2$ After created video please submit your video URL through ticket and get 2$</li><li>⚠️ Do Not place multiple orders for the Same link at the same time, wait until the first order will be Completed / Canceled or Partial :Before placing a new one.</li><li> Will  NO cancellation and No refund in such cases. ( Also: Do not place the same orders twice until the first one will be Completed/Canceled/Partial. NO cancellation will be made and both orders will be marked as "Completed"! ).</li><li> We cannot deliver you the correct number of followers/likes/views etc. in such cases.</li>
+              	</ul>
+              	<p><span class="badge">NOTE : </span>We will not refund for these orders. Please keep attention. In case your Order has been dropped, please wait for us to Refill or Cancel or Partial before to make a new order. We will not cancel any orders in this case. Please keep attention!. ⚠️The system is working according to the start count and marks your orders as completed after you will receive enough quantity. So, Don't ask us to cancel or anything else with the reason:" views/Likes/subs... come from my real users, my fans, another sellers etc. Please keep attention!</p>
+          	</div>
+            <div class="tabs_item video">
+          		<iframe src="https://www.youtube.com/embed/5Peo-ivmupE" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="100%" height="auto" frameborder="0"></iframe>
+          	</div>
+            <div class="tabs_item contactUs">
+          		<p>Need help? We are always ready to help you in any of your needs! Choose the best way to get in touch and we'll contact you ASAP!</p>
+              	<ul>
+              		<li>
+                      	<a class="main" href="/tickets">
+                      		<span class="icon">
+                                <i class="fal fa-ticket-alt"></i>
+                            </span>
+                            <span class="text">
+                                <h3>Ticket</h3>
+                                <p>Support Ticket (easiest &amp; fastest)</p>
+                            </span>
+                      	</a>
+              		</li>
+                  	<li>
+                      	<a class="main" href="skype:supercheapsmm?call">
+                      		<span class="icon">
+                                <i class="fab fa-skype"></i>
+                            </span>
+                            <span class="text">
+                                <h3>Skype</h3>
+                                <p>live:</p>
+                            </span>
+                      	</a>
+              		</li>
+                  	<li>
+                      	<a class="main" href="mailto:webersera@gmail.com">
+                      		<span class="icon">
+                                <i class="fal fa-at"></i>
+                            </span>
+                            <span class="text">
+                                <h3>Email Address</h3>
+                                <p>webersera@gmail.com</p>
+                            </span>
+                      	</a>
+              		</li>
+              	</ul>
+          	</div>
+      	</div>
+      </div>
+         </div>
+      </div>
+   </div>
+</div>
+<script>
+   function updateID() {
+      var serID=document.getElementById("orderform-service").value;
+         document.getElementById("serviceID").textContent="ID : "+serID;
+   }
+</script>
+<!-- Theme Cloned By-->
+<!--5g Hackerz-->
+<!--Distributed And Marketed By -->
+<!--Top Tech Boy Subham-->
+</div>
+{% include 'footer.twig' %}

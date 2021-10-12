@@ -1,0 +1,75 @@
+{% include 'header.twig' %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      {% if error %}
+        <div class="alert alert-dismissible alert-danger">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% endif %}
+      {% if success %}
+        <div class="alert alert-dismissible alert-success">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+
+      <div class="well">
+        <div class="titcket-title">{{ messageList['ticket']['subject'] }} {% if messageList["ticket"]["canmessage"] == 1 %} <span class="badge"> bu talebiniz yönetici tarafından kapanmış</span> {% endif %} </div>
+
+              {% if messageList %}
+                {% for message in messageList %}
+                  {% if message["support"] == 1 %}
+                    <div class="row ticket-message-block ticket-message-right">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-11">
+                        <div class="ticket-message">
+                          <div class="message">{{ message["message"] }}</div>
+                        </div>
+                        <div class="info text-right">
+                          <strong>{{ user["username"] }}</strong>
+                          <small class="text-muted">{{ message["time"] }}</small>
+                        </div>
+                      </div>
+                      <div class="col-md-1"></div>
+                    </div>
+                  {% elseif message["subject"] %}
+                  {% else %}
+                    <div class="row ticket-message-block ticket-message-left">
+                      <div class="col-md-11">
+                        <div class="ticket-message">
+                          <div class="message">{{ message["message"] }}</div>
+                        </div>
+                        <div class="info">
+                          <strong>Destek yöneticisi</strong>
+                          <small class="text-muted">{{ message["time"] }}</small>
+                        </div>
+                      </div>
+                      <div class="col-md-1"></div>
+                    </div>
+                  {% endif %}
+
+                {% endfor %}
+              {% endif %}
+            {% if messageList['ticket']['canmessage'] == 2 %}
+              <div class="row">
+                  <div class="col-md-12">
+                    <form method="post" action="">
+                      <div class="form-group panel-border-top">
+                        <label for="message" class="control-label">Your message</label>
+                        <textarea id="message" rows="5" class="form-control" name="message">{{ data["message"] }}</textarea>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Answer me</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+    </div>
+  </div>
+</div>
+{% include 'footer.twig' %}

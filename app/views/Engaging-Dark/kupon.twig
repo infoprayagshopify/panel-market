@@ -1,0 +1,51 @@
+{% include 'header.twig' %}
+<div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_16">
+    <div class="ticket-form">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            <div class="row ticket-form__alignment">
+                <div class="col-lg-12">
+                   <div class="component_card">
+                      <div class="card">
+    <div class="col-md-12">
+
+      
+      {% if error %}
+        <div class="alert alert-dismissible alert-danger {% if site['rtl'] %} rtl-alert {% endif %}">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ errorText }}
+        </div>
+      {% elseif success %}
+        <div class="alert alert-dismissible alert-success {% if site['rtl'] %} rtl-alert {% endif %}">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          {{ successText }}
+        </div>
+      {% endif %}
+
+      
+        <div class="well">
+          <form method="post" action="kupon">
+            <div class="form-group">
+              <label for="subject" class="control-label">Coupon Code</label>
+              <input type="text" class="form-control" id="kuponadi" name="kuponadi">
+            </div>
+            <button type="submit" class="btn btn-block btn-big-primary">Use</button>
+          </form>
+        </div>
+      
+      </div>
+  </div>
+</div>
+</div>
+</div></div>
+</div></div>
+  </div>
+</div>
+
+{% include 'footer.twig' %}

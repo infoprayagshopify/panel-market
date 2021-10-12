@@ -1,0 +1,176 @@
+{% include 'header.twig' %}
+
+
+
+{#
+
+<div class="container">
+  <div class="service-table">
+  <div class="service-head clearfix">
+    <h1>Services</h1>
+    <div class="search-bar">
+      <div class="row">
+        <div class="col-sm-6"><input type="text" placeholder="Search" id="search" class="form-control" placeholder=""></div>
+        <div class="col-sm-6">
+          <a href="#" role="button" id="service-filter" style="padding: 10px 0;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary btn-block">SERVICES FILTER<i class="fas fa-chevron-circle-up"></i></a>
+          <div class="dropdown-menu setting" aria-labelledby="dropdownSetting" style="">
+            {% for category in serviceCategory %}
+            <option value="{{ category["category_name"] }}" title=" FILTER CATEGORY " onclick="filterService('{{ category["category_name"] }}')"><i class="fa fa-{{ category["category_icon"] }}"></i> {{ category["category_name"] }}</option>
+            {% endfor %}
+            
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<div class="wrapper-content">
+    <div class="wrapper-content__header">
+          </div>
+    <div class="wrapper-content__body">
+      <!-- Main variables *content* -->
+      <div id="block_73">
+    <div class="services-list ">
+        <div class="bg"></div>
+        <div class="divider-top"></div>
+        <div class="divider-bottom"></div>
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col">
+                    <div class="services-list__table">
+                        <div class="table-bg component_table ">
+                            <div class="table-wr table-responsive">
+                                <table class="table" id="service-table-73">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th class="nowrap">Service</th>
+                                        <th class="nowrap">Rate per 1000</th>
+                                        <th class="nowrap">Min order</th>
+                                        <th class="nowrap">Max order</th>
+                                                                                                                            <th class="hidden-xs hidden-sm service-description__th">Description</th>
+                                                                            </tr>
+                                    </thead>
+                                    <tbody>
+              {% for category in serviceCategory %}
+                <tr class="services-list-category-title">
+                                                <td colspan="6">
+                                                   <div class="w-100 ">
+                                                       <div class="style-bg-primary-alpha-20 style-text-primary services-category text-center" style="font-size:23px; font-weight:bold;">
+                                                           {{ category["category_name"] }}
+                                                       </div>
+                                                   </div>
+                                                </td>
+                                            </tr>
+                {% for service in category['services'] %}
+                  <tr>
+                    <td>{{ service["service_id"] }}</td>
+                    <td>{{ service["service_name"] }}</td>
+                    
+                    <td>
+                      {{ service["service_price"] }}
+                    </td>
+                    <td>{{ service["service_min"] }}</td>
+                    <td>{{ service["service_max"] }}</td>
+                     <td>
+                  <!-- Modal -->
+                        <div class="modal fade" id="service{{ service["service_id"] }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"> {{ service["service_name"] }} </h5> 
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                              <div class="modal-body text-left">
+                                <p class="detail-data details-split-959">
+              {{ service["service_description"] }}
+              </p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div><a href="javascript:void(0)" class="btn btn-actions " data-toggle="modal" data-target="#service{{ service["service_id"] }}">
+                         <span class="component-navbar-nav-link-icon">
+                                             <span class="fal fa-file-alt"></span>
+                                           </span>
+                  
+                        </td>
+                  </tr>
+                {% endfor %}
+              {% endfor %}
+
+      </div>    
+</div></div></div>
+      </div>
+    </div>
+
+<div class="modal fade " tabindex="-1" role="dialog" id="service-description-91">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="service-description-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="wrapper-content__footer">
+       <div id="block_76">
+    <div class="footer ">
+        <div class="component_footer_single_line">
+            <div class="component-footer">
+                <div class="component-footer__public">
+                                           </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     </div>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="https://cdn.mypanel.link/global/ch3915babussofa4.js">
+      </script>
+  <script type="text/javascript" src="https://cdn.mypanel.link/global/cgtptn05b64bwcs4.js">
+      </script>
+  <script type="text/javascript" src="https://cdn.mypanel.link/global/xcz59lmywkfdgsp4.js">
+      </script>
+  <script type="text/javascript" src="https://cdn.mypanel.link/global/wnzsoolloslhfumj.js">
+      </script>
+  <script type="text/javascript" >
+     window.modules.layouts = {"auth":0};   </script>
+  <script type="text/javascript" >
+      </script>
+</body>
+</html>

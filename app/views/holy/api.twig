@@ -1,0 +1,1478 @@
+{% if user['auth'] %}
+{% include 'header.twig' %}
+<div class="container-fluid">
+<div class="row api-page">
+  <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>API DOCS</h4>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>HTTP Method</td>
+              <td class="text-right">POST</td>
+            </tr>
+            <tr>
+              <td>API URL</td>
+              <td class="text-right"><span style="color: #01a8ee;">{{ site['url'] }}</span></td>
+            </tr>
+                        <tr>
+              <td>API Key</td>
+              <td class="text-right">{{ user['apikey'] }}</td>
+            </tr>
+                        <tr>
+              <td>Response format</td>
+              <td class="text-right">JSON</td>
+            </tr>
+            <tr>
+              <td>Download Examples</td>
+              <td class="text-right">
+                <a href="/example.txt" class="btn btn-primary" target="_blank">PHP Code</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Service list</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>services</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_services')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_services">
+[
+    {
+        "service": 1,
+        "name": "Followers",
+        "type": "Default",
+        "category": "First Category",
+        "rate": "0.90",
+        "min": "50",
+        "max": "10000",
+        "refill": true
+    },
+    {
+        "service": 2,
+        "name": "Comments",
+        "type": "Custom Comments",
+        "category": "Second Category",
+        "rate": "8",
+        "min": "10",
+        "max": "1500",
+        "refill": false
+    }
+]
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Add order</h4>
+                          <form class="form-inline">
+              <div class="form-group">
+                <select class="form-control input-sm" id="service_type">
+                                    <option value="0">Default</option>
+                                    <option value="10">Package</option>
+                                    <option value="2">Custom Comments</option>
+                                    <option value="9">Mentions</option>
+                                    <option value="4">Mentions Custom List</option>
+                                    <option value="7">Mentions User Followers</option>
+                                    <option value="14">Custom Comments Package</option>
+                                    <option value="15">Comment Likes</option>
+                                    <option value="17">Poll</option>
+                                    <option value="100">Subscriptions</option>
+                                  </select>
+              </div>
+          </form>
+                        	<div id="type_0" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>runs (optional)</td>
+                          <td>Runs to deliver</td>
+                        </tr>
+                                            	<tr>
+                          <td>interval (optional)</td>
+                          <td>Interval in minutes</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_10" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_2" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>comments</td>
+                          <td>Comments list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_9" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>usernames</td>
+                          <td>Usernames list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_4" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>usernames</td>
+                          <td>Usernames list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_7" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>URL to scrape followers from</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_100" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>Username</td>
+                        </tr>
+                                            	<tr>
+                          <td>min</td>
+                          <td>Quantity min</td>
+                        </tr>
+                                            	<tr>
+                          <td>max</td>
+                          <td>Quantity max</td>
+                        </tr>
+                                            	<tr>
+                          <td>posts</td>
+                          <td>New posts count</td>
+                        </tr>
+                                            	<tr>
+                          <td>delay</td>
+                          <td>Delay in minutes. Possible values: 0, 5, 10, 15, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 360, 420, 480, 540, 600</td>
+                        </tr>
+                                            	<tr>
+                          <td>expiry (optional)</td>
+                          <td>Expiry date. Format d/m/Y</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_14" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>comments</td>
+                          <td>Comments list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_15" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>Username of the comment owner</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_17" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>answer_number</td>
+                          <td>Answer number of the poll</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_add')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_add">
+{
+    "order": 23501
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Order status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>status</td>
+                </tr>
+                              <tr>
+                  <td>order</td>
+                  <td>Order ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_status">
+{
+    "charge": "0.27819",
+    "start_count": "3572",
+    "status": "Partial",
+    "remains": "157",
+    "currency": "USD"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Multiple orders status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>status</td>
+                </tr>
+                              <tr>
+                  <td>orders</td>
+                  <td>Order IDs separated by comma</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_multi_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_multi_status">
+{
+    "1": {
+        "charge": "0.27819",
+        "start_count": "3572",
+        "status": "Partial",
+        "remains": "157",
+        "currency": "USD"
+    },
+    "10": {
+        "error": "Incorrect order ID"
+    },
+    "100": {
+        "charge": "1.44219",
+        "start_count": "234",
+        "status": "In progress",
+        "remains": "10",
+        "currency": "USD"
+    }
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Create refill</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>refill</td>
+                </tr>
+                              <tr>
+                  <td>order</td>
+                  <td>Order ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_refill')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_refill">
+{
+    "refill": "1"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Get refill status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>refill_status</td>
+                </tr>
+                              <tr>
+                  <td>refill</td>
+                  <td>Refill ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_refill_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_refill_status">
+{
+    "status": "Completed"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>User balance</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>balance</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_balance')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_balance">
+{
+    "balance": "100.84292",
+    "currency": "USD"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+          	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% else %}
+
+
+
+
+
+
+
+
+
+
+
+{% include 'header.twig' %}
+ <!-- Main variables *content* -->
+  	    <div class="container">
+<div class="row api-page">
+  <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>API DOCS</h4>
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>HTTP Method</td>
+              <td class="text-right">POST</td>
+            </tr>
+            <tr>
+              <td>API URL</td>
+              <td class="text-right"><span style="color: #01a8ee;">{{ site['url'] }}</span></td>
+            </tr>
+                        <tr>
+              <td>Response format</td>
+              <td class="text-right">JSON</td>
+            </tr>
+            <tr>
+              <td>Download Examples</td>
+              <td class="text-right">
+                <a href="/example.txt" class="btn btn-primary" target="_blank">PHP Code</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Service list</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>services</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_services')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_services">
+[
+    {
+        "service": 1,
+        "name": "Followers",
+        "type": "Default",
+        "category": "First Category",
+        "rate": "0.90",
+        "min": "50",
+        "max": "10000",
+        "refill": true
+    },
+    {
+        "service": 2,
+        "name": "Comments",
+        "type": "Custom Comments",
+        "category": "Second Category",
+        "rate": "8",
+        "min": "10",
+        "max": "1500",
+        "refill": false
+    }
+]
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Add order</h4>
+                          <form class="form-inline">
+              <div class="form-group">
+                <select class="form-control input-sm" id="service_type">
+                                    <option value="0">Default</option>
+                                    <option value="10">Package</option>
+                                    <option value="2">Custom Comments</option>
+                                    <option value="9">Mentions</option>
+                                    <option value="4">Mentions Custom List</option>
+                                    <option value="7">Mentions User Followers</option>
+                                    <option value="14">Custom Comments Package</option>
+                                    <option value="15">Comment Likes</option>
+                                    <option value="17">Poll</option>
+                                    <option value="100">Subscriptions</option>
+                                  </select>
+              </div>
+          </form>
+                        	<div id="type_0" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>runs (optional)</td>
+                          <td>Runs to deliver</td>
+                        </tr>
+                                            	<tr>
+                          <td>interval (optional)</td>
+                          <td>Interval in minutes</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_10" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_2" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>comments</td>
+                          <td>Comments list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_9" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>usernames</td>
+                          <td>Usernames list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_4" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>usernames</td>
+                          <td>Usernames list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_7" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>URL to scrape followers from</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_100" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>Username</td>
+                        </tr>
+                                            	<tr>
+                          <td>min</td>
+                          <td>Quantity min</td>
+                        </tr>
+                                            	<tr>
+                          <td>max</td>
+                          <td>Quantity max</td>
+                        </tr>
+                                            	<tr>
+                          <td>posts</td>
+                          <td>New posts count</td>
+                        </tr>
+                                            	<tr>
+                          <td>delay</td>
+                          <td>Delay in minutes. Possible values: 0, 5, 10, 15, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 360, 420, 480, 540, 600</td>
+                        </tr>
+                                            	<tr>
+                          <td>expiry (optional)</td>
+                          <td>Expiry date. Format d/m/Y</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_14" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>comments</td>
+                          <td>Comments list separated by \r\n or \n</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_15" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>username</td>
+                          <td>Username of the comment owner</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                	<div id="type_17" style="display:none;">
+        		<div class="table-responsive">
+                  <table class="table dynamic-table">
+                    <thead>
+                      <tr>
+                        <th>Parameters</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                            	<tr>
+                          <td>key</td>
+                          <td>Your API key</td>
+                        </tr>
+                                            	<tr>
+                          <td>action</td>
+                          <td>add</td>
+                        </tr>
+                                            	<tr>
+                          <td>service</td>
+                          <td>Service ID</td>
+                        </tr>
+                                            	<tr>
+                          <td>link</td>
+                          <td>Link to page</td>
+                        </tr>
+                                            	<tr>
+                          <td>quantity</td>
+                          <td>Needed quantity</td>
+                        </tr>
+                                            	<tr>
+                          <td>answer_number</td>
+                          <td>Answer number of the poll</td>
+                        </tr>
+                                          </tbody>
+                  </table>
+                </div>
+        	</div>
+                
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_add')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_add">
+{
+    "order": 23501
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Order status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>status</td>
+                </tr>
+                              <tr>
+                  <td>order</td>
+                  <td>Order ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_status">
+{
+    "charge": "0.27819",
+    "start_count": "3572",
+    "status": "Partial",
+    "remains": "157",
+    "currency": "USD"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Multiple orders status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>status</td>
+                </tr>
+                              <tr>
+                  <td>orders</td>
+                  <td>Order IDs separated by comma</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_multi_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_multi_status">
+{
+    "1": {
+        "charge": "0.27819",
+        "start_count": "3572",
+        "status": "Partial",
+        "remains": "157",
+        "currency": "USD"
+    },
+    "10": {
+        "error": "Incorrect order ID"
+    },
+    "100": {
+        "charge": "1.44219",
+        "start_count": "234",
+        "status": "In progress",
+        "remains": "10",
+        "currency": "USD"
+    }
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Create refill</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>refill</td>
+                </tr>
+                              <tr>
+                  <td>order</td>
+                  <td>Order ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_refill')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_refill">
+{
+    "refill": "1"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>Get refill status</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>refill_status</td>
+                </tr>
+                              <tr>
+                  <td>refill</td>
+                  <td>Refill ID</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_refill_status')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_refill_status">
+{
+    "status": "Completed"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-6">
+    <div class="well mb-3">
+      <h4>User balance</h4>
+              <div class="table-responsive">
+          <table class="table dynamic-table">
+            <thead>
+              <tr>
+                <th>Parameters</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+                              <tr>
+                  <td>key</td>
+                  <td>Your API key</td>
+                </tr>
+                              <tr>
+                  <td>action</td>
+                  <td>balance</td>
+                </tr>
+                          </tbody>
+          </table>
+        </div>
+                
+        <div class="sub-title">Example response</div>
+        <div class="pre-btn-cont">
+          <button class="float-right link" data-toggle="tooltip" data-placement="top" title="" onclick="CopyToClipboard('copyServiceListCode_balance')" data-original-title="Copy code">
+            <i class="fal fa-copy"></i> Copy
+          </button>
+          <pre id="copyServiceListCode_balance">
+{
+    "balance": "100.84292",
+    "currency": "USD"
+}
+</pre>
+        </div>
+    </div>
+  </div>
+  </div>
+</div>
+      {% endif %}
+{% include 'footer.twig' %}

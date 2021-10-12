@@ -1,0 +1,549 @@
+
+{% if user['auth'] %} 
+{% include 'header.twig' %}
+<div class="container-fluid">
+  <div class="well mb-3">
+  	<div class="row first-row">
+      <div class="col-sm-4">
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i> Filter Category <span class="caret"></span></a>
+          <div class="dropdown-menu dropdown-max-height">
+              {% for category in serviceCategory %}            
+                <button type="button" class="dropdown-item cateSelect" data-category="{{ category["category_name"] }}" value="{{ category["category_name"] }}">{{ category["category_name"] }}</button>
+                {% endfor %}
+        </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-8">
+        <form action="" method="" id="">
+          <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search Services" id="searchService">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fal fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="row services-page">
+    <div class="col-sm-12">
+      <div class="well">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-nowrap"><i class="fal fa-list-ol"></i> ID</th>
+                  <th><i class="fal fa-cogs"></i> Service</th>
+                  <th class="text-nowrap"><i class="fal fa-coins"></i> Rate per 1000</th>
+                  <th class="text-nowrap"><i class="fal fa-compress-alt"></i> Min order</th>
+                  <th class="text-nowrap"><i class="fal fa-expand-alt"></i> Max order</th>
+                                    
+                  </th>
+                                    <th class="text-nowrap"><i class="fal fa-comment-alt-medical"></i> Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for category in serviceCategory %}
+            <tr data-category="{{ category["category_name"] }}">
+                  <td colspan="10" class="cat-title">
+                  	<div class="main">
+                  		<span class="icon">
+                  			                          	                  		</span>
+                      	<span>{{ category["category_name"] }}</span>
+                  	</div>
+                  </td>
+                </tr>
+                       
+            {% for service in category['services'] %}
+                <tr data-category="{{ category["category_name"] }}">
+                   <td>{{ service["service_id"] }}</td>
+                    <td>{{ service["service_name"] }}</td>
+                    
+                    <td>
+                      {{ service["service_price"] }}
+                    </td>
+                    <td>{{ service["service_min"] }}</td>
+                    <td>{{ service["service_max"] }}</td>
+                                    <td data-th="Description">
+                    <!-- Button trigger desc modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#descSerNo-{{ service["service_id"] }}">
+                      Details
+                    </button>
+
+                    <!-- Desc Modal -->
+                   <!-- Desc Modal -->
+                    <div class="modal fade" id="descSerNo-{{ service["service_id"] }}" tabindex="-1" role="dialog" aria-labelledby="DescModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ service["service_name"] }}<h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            {{ service["service_description"] }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>                                                
+                </tr> 
+                {% endfor %}
+              {% endfor %}
+                                             </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+          	</div>
+          	
+          	
+ 
+ 	        <script>
+      $(document).on("click",".cateSelect",function(){
+          var dataCate = $(this).attr("data-category")
+
+          $('.services-page tbody tr').each(function(){
+              if($(this).hasClass("active")){
+          }else{
+              $(this).hide();
+          }
+       });
+        if($(this).hasClass("active")){
+          $(this).removeClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").hide();
+        }
+        else{
+          $(this).addClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").addClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").show();
+        }
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#searchService").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $(".services-page tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+    </script>
+      	<script>
+  		// Tabs
+        (function ($) {
+            $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+            $('.tab ul.tabs li a').on('click', function (g) {
+                var tab = $(this).closest('.tab'), 
+                index = $(this).closest('li').index();
+                tab.find('ul.tabs > li').removeClass('current');
+                $(this).closest('li').addClass('current');
+                tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+                tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+                g.preventDefault();
+            });
+        })(jQuery);
+  	</script>
+    <script>
+      	$(document).ready(function(){
+    		$(window).trigger('resize');
+      	});
+    </script>
+         	
+          	
+{% else %}
+
+
+
+
+
+{% include 'header.twig' %}
+  	    <style>
+	tr[visible="false"] {
+        display:none;
+    }
+</style>
+<div class="container">
+  <div class="well mb-3">
+  	<div class="row first-row">
+      <div class="col-sm-4">
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-sort-amount-down"></i> Filter Category <span class="caret"></span></a>
+          <div class="dropdown-menu dropdown-max-height">
+                {% for category in serviceCategory %}
+            <option value="{{ category["category_name"] }}" title=" FILTER CATEGORY " onclick="filterService('{{ category["category_name"] }}')"><i class="fa fa-{{ category["category_icon"] }}"></i> {{ category["category_name"] }}</option>
+            {% endfor %}
+        </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-8">
+        <form action="" method="" id="">
+          <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search Services" id="search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default"><i class="fal fa-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+   
+  <div class="row services-page">
+    <div class="col-sm-12">
+      <div class="well">
+        <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-nowrap"><i class="fal fa-list-ol"></i> ID</th>
+                  <th><i class="fal fa-cogs"></i> Service</th>
+                  <th class="text-nowrap"><i class="fal fa-coins"></i> Rate per 1000</th>
+                  <th class="text-nowrap"><i class="fal fa-compress-alt"></i> Min order</th>
+                  <th class="text-nowrap"><i class="fal fa-expand-alt"></i> Max order</th>
+                                    
+                  </th>
+                                    <th class="text-nowrap"><i class="fal fa-comment-alt-medical"></i> Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for category in serviceCategory %}
+            <tr data-category="{{ category["category_name"] }}">
+                  <td colspan="10" class="cat-title">
+                  	<div class="main">
+                  		<span class="icon">
+                  			                          	                  		</span>
+                      	<span>{{ category["category_name"] }}</span>
+                  	</div>
+                  </td>
+                </tr>
+                    
+                {% for service in category['services'] %}
+                <tr data-category="{{ category["category_name"] }}">
+                   <td>{{ service["service_id"] }}</td>
+                    <td>{{ service["service_name"] }}</td>
+                    
+                    <td>
+                      {{ service["service_price"] }}
+                    </td>
+                    <td>{{ service["service_min"] }}</td>
+                    <td>{{ service["service_max"] }}</td>
+                                    <td data-th="Description">
+                    <!-- Button trigger desc modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#descSerNo-{{ service["service_id"] }}">
+                      Details
+                    </button>
+
+                    <!-- Desc Modal -->
+                   <!-- Desc Modal -->
+                    <div class="modal fade" id="descSerNo-{{ service["service_id"] }}" tabindex="-1" role="dialog" aria-labelledby="DescModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">{{ service["service_name"] }}<h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            {{ service["service_description"] }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>                                                
+                </tr> 
+                {% endfor %}
+              {% endfor %}
+               </tbody>
+            </table>
+          </div>
+      </div>
+    </div>
+  </div>  
+</div>
+   <script>
+        jQuery("#ot-industries-slider").owlCarousel({
+            stagePadding: 365,
+            items:2,
+            nav:false,
+            dots: true,
+            loop:true,
+            navText: ['<i class="flaticon-back"></i>', '<i class="flaticon-right-arrow-1"></i>'],
+            responsive:{
+                1600:{
+                    stagePadding: 365,
+                    items:2
+                },
+                1200:{
+                    stagePadding: 200,
+                    items:2
+                },
+                992:{
+                    stagePadding: false,
+                    items:2
+                },
+                0:{
+                    stagePadding: false,
+                    items:1
+                }
+            }
+        });
+        function myFunction1() {
+            var dots = document.getElementById("dots1");
+            var moreText = document.getElementById("more1");
+            var btnText = document.getElementById("myBtn1");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction2() {
+            var dots = document.getElementById("dots2");
+            var moreText = document.getElementById("more2");
+            var btnText = document.getElementById("myBtn2");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction3() {
+            var dots = document.getElementById("dots3");
+            var moreText = document.getElementById("more3");
+            var btnText = document.getElementById("myBtn3");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction4() {
+            var dots = document.getElementById("dots4");
+            var moreText = document.getElementById("more4");
+            var btnText = document.getElementById("myBtn4");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction5() {
+            var dots = document.getElementById("dots5");
+            var moreText = document.getElementById("more5");
+            var btnText = document.getElementById("myBtn5");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }
+        function myFunction6() {
+            var dots = document.getElementById("dots6");
+            var moreText = document.getElementById("more6");
+            var btnText = document.getElementById("myBtn6");
+
+            if (dots.classList.contains("element-hidden")) {
+                dots.classList.remove("element-hidden");
+                dots.classList.add("element-shown");
+                moreText.classList.remove("element-shown");
+                moreText.classList.add("element-hidden");
+                btnText.innerHTML = "Read more";            
+            } else {
+                dots.classList.remove("element-shown");
+                dots.classList.add("element-hidden");
+                moreText.classList.remove("element-hidden");
+                moreText.classList.add("element-shown");
+                btnText.innerHTML = "Read less";
+            }
+        }        
+
+        // odometers
+        function custom_count(){
+            var flag = true;
+            $('.counters-sec').each(function() {
+                if ($(this).isInViewport()) {   // Here we check perticular section is in the viewport or number-counter-section
+                    if (flag) {
+                        /* FOR number counter(odometer)  */
+                        var arr = [],
+                        i = 0;
+                        $('.odometer').each(function() {
+                            arr[i++] = $(this).attr('data-count');;
+                            odometer.innerText = arr[0]; //here odometer is *id* of first number
+                            odometer1.innerText = arr[1]; //here odometer1 is *id* of second number
+                            odometer2.innerText = arr[2]; //here odometer2 is *id* of second number
+                            odometer3.innerText = arr[3]; //here odometer3 is *id* of second number
+                        });
+                        flag = false;
+                    }
+                } else {}
+            });
+        }
+
+        // for check the section in view port or not;
+        $.fn.isInViewport = function() {
+            var elementTop = $(this).offset().top;
+            var elementBottom = elementTop + $(this).outerHeight();
+
+            var viewportTop = $(window).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+            console.log(elementBottom > viewportTop && elementTop < viewportBottom);
+        };
+
+        $(document).ready(function() {
+
+            //  odometer section is on view-port or not
+            //custom_count();
+            //resize-function
+            $(window).resize(function() {
+                custom_count();
+            });
+            
+            $(window).on("scroll",function(){
+            custom_count();
+            });
+      
+      		//typing
+      		new TypeIt("#typewriter", {
+              speed: 200,
+              waitUntilVisible: true,
+  			  loop: true
+            })
+            .type("Followers", {delay: 100})
+      		.pause(2000)
+            .delete(9)
+            .type('Likes')
+      		.pause(2000)
+            .delete(5)
+            .type('Views')
+            .pause(2000)
+            .delete(5)
+            .go();
+        });
+      
+      	//video modal
+        $(document).ready(function() {  
+          var $videoSrc;  
+          $('.video-btn').click(function() {
+            $videoSrc = $(this).attr("src");
+          });
+          console.log($videoSrc);  
+          $('#videoModal').on('shown.bs.modal', function (e) {    
+            $("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+          })
+          $('#videoModal').on('hide.bs.modal', function (e) {
+            $("#video").attr('src',$videoSrc); 
+          })
+        });
+    </script>
+  	        <script>
+      $(document).on("click",".cateSelect",function(){
+          var dataCate = $(this).attr("data-category")
+
+          $('.services-page tbody tr').each(function(){
+              if($(this).hasClass("active")){
+          }else{
+              $(this).hide();
+          }
+       });
+        if($(this).hasClass("active")){
+          $(this).removeClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").hide();
+        }
+        else{
+          $(this).addClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").addClass("active");
+          $("tbody tr[data-category='" + dataCate +"']").show();
+        }
+      });
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#searchService").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $(".services-page tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+    </script>
+      	<script>
+  		// Tabs
+        (function ($) {
+            $('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
+            $('.tab ul.tabs li a').on('click', function (g) {
+                var tab = $(this).closest('.tab'), 
+                index = $(this).closest('li').index();
+                tab.find('ul.tabs > li').removeClass('current');
+                $(this).closest('li').addClass('current');
+                tab.find('.tab_content').find('div.tabs_item').not('div.tabs_item:eq(' + index + ')').slideUp();
+                tab.find('.tab_content').find('div.tabs_item:eq(' + index + ')').slideDown();
+                g.preventDefault();
+            });
+        })(jQuery);
+  	</script>
+    <script>
+      	$(document).ready(function(){
+    		$(window).trigger('resize');
+      	});
+    </script>           
+{% endif %}  
+
+{% include 'footer.twig' %}

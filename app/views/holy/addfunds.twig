@@ -1,0 +1,155 @@
+{% include 'header.twig' %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+
+        {% if error %}
+          <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ errorText }}
+          </div>
+        {% endif %}
+        {% if success %}
+          <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{ successText }}
+          </div>
+        {% endif %}
+      </div>
+
+ 
+    <div class="col-sm-12">
+
+        {% if paymentsList %}
+          <div class="well mb-3">
+  
+              <form method="post" action="addfunds">
+
+                <div class="form-group">
+                  <label for="method" class="control-label">{{ lang['addfunds.method'] }}</label>
+                  <select class="form-control" id="payment_method" name="payment_type">
+                   {% for payment in paymentsList %}
+                      <option value="{{ payment['id'] }}" {% if data['payment_type'] == payment['id'] %} selected {% endif %} >{{ payment['method_name'] }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                  <div class="form-group">
+                      <label for="method" class="control-label">{{ lang['addfunds.amount'] }}</label>
+                      <input class="form-control" name="payment_amount" value="{{ data['payment_amount'] }}">
+                  </div>
+
+                <button type="submit" class="btn btn-primary">{{ lang['addfunds.button'] }}</button>
+              </form>
+    
+          </div>
+        {% endif %}
+      </div>
+
+      {% if bankPayment == 2 %}
+    
+    <div class="col-sm-12">
+          
+    <div class="well mb-3">
+                <form method="post" action="addfunds">
+
+                  <div class="form-group">
+                    <label for="method" class="control-label">{{ lang['addfunds.bank'] }}</label>
+                    <select class="form-control" name="payment_bank">
+                     {% for bank in bankList %}
+                        <option value="{{ bank['id'] }}" {% if data['payment_bank'] == payment['id'] %} selected {% endif %} >{{ bank['bank_name'] }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+
+                    <div class="form-group">
+                        <label for="method" class="control-label">{{ lang['addfunds.bank.amount'] }}</label>
+                        <input class="form-control" name="payment_bank_amount" value="{{ data['payment_bank_amount'] }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="method" class="control-label">{{ lang['addfunds.bank.sender'] }}</label>
+                        <input class="form-control" name="payment_gonderen" value="{{ data['payment_gonderen'] }}">
+                    </div>
+                    <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary">{{ lang['addfunds.bank.button'] }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if bankPayment == 2 %}
+    <div class="container">
+        <div class="row mb-3">
+         
+    <div class="col-sm-12">
+
+
+            <div class="well">
+
+              <p style="text-align: center;">
+                <span style="font-weight: 700; font-size: 36px;">Banka</span><span style="font-size: 36px;"> Hesaplarımız</span>
+              </p>
+
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-checkable ">
+                  <thead>
+                    <tr>
+                      <th>Banka Adı</th>
+                      <th>Şube Kodu</th>
+                      <th>Hesap No</th>
+                      <th>IBAN</th>
+                      <th>Alıcı Adı</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for bank in bankList %}
+                    <tr>
+                      <td>{{ bank['bank_name'] }}</td>
+                      <td>{{ bank['bank_sube'] }}</td>
+                      <td>{{ bank['bank_hesap'] }}</td>
+                      <td><b>{{ bank['bank_iban'] }}</b><br></td>
+                      <td>{{ bank["bank_alici"] }}</td>
+                    </tr>
+                  {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-checkable ">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <b>BİLGİLENDİRME: </b> Ödeme yapılırken kesilen Havale/EFT ücretleri tarafımızca <b>karşılanmayacaktır</b>.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+{% if contentText %}
+<div class="container" style="text-align:center;">
+  <div class="row mb-3">
+    <div class="col-sm-12">
+      <div class="well ">
+        {{ contentText }}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% include 'footer.twig' %}
